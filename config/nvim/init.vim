@@ -315,7 +315,7 @@ autocmd BufWrite *.rb :call DeleteTrailingWS()
 " => Misc
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Remove the Windows ^M - when the encodings gets messed up
-noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
+noremap <leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
 
 " Quickly open a buffer for scribble
 map <leader>q :e ~/buffer<cr>
@@ -381,7 +381,7 @@ endtry
 let g:ctrlp_working_path_mode = 0
 
 let g:ctrlp_map = '<c-f>'
-map <c-b> :CtrlPBuffer<cr>
+map <C-b> :CtrlPBuffer<cr>
 
 let g:ctrlp_max_height = 20
 let g:ctrlp_custom_ignore = 'node_modules\|^\.DS_Store\|^\.git\|^\.coffee'
@@ -430,14 +430,6 @@ nmap ga <Plug>(EasyAlign)
 let g:multi_cursor_use_default_mapping=0
 let g:multi_cursor_next_key='<C-z>'
 let g:multi_cursor_quit_key='<Esc>'
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => surround.vim config
-" Annotate strings with gettext http://amix.dk/blog/post/19678
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-vmap Si S(i_<esc>f)
-au FileType mako vmap Si S"i${ _(<esc>2f"a) }<esc>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
