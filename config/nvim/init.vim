@@ -48,6 +48,10 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'pangloss/vim-javascript'                          " more js stuff + css
   Plug 'ternjs/tern_for_vim'                              " javascript syntax checking
 
+" Other plugins
+" ==============
+  Plug 'elzr/vim-json'                                    " json syntax
+
 call plug#end()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -479,6 +483,12 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:SuperTabClosePreviewOnPopupClose = 1
 let g:SuperTabDefaultCompletionType = "context"
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => vim-json
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:vim_json_syntax_conceal = 0
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
