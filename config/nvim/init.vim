@@ -25,6 +25,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'ervandew/supertab'                                " tab completion
   Plug 'xolox/vim-misc' | Plug 'xolox/vim-easytags'       " ctags support
   Plug 'othree/eregex.vim'                                " allows perl regex
+  Plug 'scrooloose/syntastic'                             " syntax checking
 
 " >> Misc
   Plug 'Shougo/echodoc.vim'                               " show method prototype in echo window
@@ -451,6 +452,33 @@ let g:SuperTabDefaultCompletionType = "context"
 " => vim-json
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:vim_json_syntax_conceal = 0
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => vim-go
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_interfaces = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+let g:go_fmt_command = "goimports"
+let g:go_fmt_fail_silently = 0
+let g:go_fmt_autosave = 1
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => vim-go
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
