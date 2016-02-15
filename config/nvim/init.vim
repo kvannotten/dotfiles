@@ -24,6 +24,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'ctrlpvim/ctrlp.vim'                               " file searcher
   Plug 'ervandew/supertab'                                " tab completion
   Plug 'xolox/vim-misc' | Plug 'xolox/vim-easytags'       " ctags support
+  Plug 'othree/eregex.vim'                                " allows perl regex
 
 " >> Misc
   Plug 'Shougo/echodoc.vim'                               " show method prototype in echo window
