@@ -48,6 +48,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'jelera/vim-javascript-syntax'                     " js syntax stuff
   Plug 'pangloss/vim-javascript'                          " more js stuff + css
   Plug 'ternjs/tern_for_vim'                              " javascript syntax checking
+  Plug 'mxw/vim-jsx'                                      " jsx syntax checking
 
 " Other plugins
 " ==============
@@ -310,6 +311,7 @@ endfunc
 autocmd BufWrite *.py :call DeleteTrailingWS()
 autocmd BufWrite *.coffee :call DeleteTrailingWS()
 autocmd BufWrite *.rb :call DeleteTrailingWS()
+nmap <leader>s :call DeleteTrailingWS()<cr>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
