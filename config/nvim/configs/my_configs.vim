@@ -31,9 +31,11 @@ autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 
 " disable netrw
-let g:loaded_netrw = 1
-let g:loaded_netrwPlugin = 1
+let g:loaded_netrw=1
+let g:loaded_netrwPlugin=1
 
 set mouse=a " enable mouse in all modes
 
-let g:jsx_ext_required = 0
+let g:jsx_ext_required=0
+
+set foldmethod=marker

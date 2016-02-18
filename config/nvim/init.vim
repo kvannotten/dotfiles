@@ -1,6 +1,6 @@
 " Add plugins
 call plug#begin('~/.config/nvim/plugged')
-
+" {{{
 " General Plugins
 " =================
 " >> Interface enhancement
@@ -54,6 +54,7 @@ call plug#begin('~/.config/nvim/plugged')
 " ==============
   Plug 'elzr/vim-json'                                    " json syntax
 
+"}}}
 call plug#end()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
