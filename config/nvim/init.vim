@@ -26,6 +26,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'xolox/vim-misc' | Plug 'xolox/vim-easytags'       " ctags support
   Plug 'othree/eregex.vim'                                " allows perl regex
   Plug 'scrooloose/syntastic'                             " syntax checking
+  Plug 'simnalamburt/vim-mundo'                           " visualize undo tree
 
 " >> Misc
   Plug 'Shougo/echodoc.vim'                               " show method prototype in echo window
@@ -483,6 +484,11 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => vim-mundo
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nnoremap <F6> :MundoToggle<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => rainbow
