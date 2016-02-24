@@ -51,6 +51,10 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'ternjs/tern_for_vim'                              " javascript syntax checking
   Plug 'mxw/vim-jsx'                                      " jsx syntax checking
 
+" Elm plugins
+" ============
+  Plug 'lambdatoast/elm.vim'                              " elm syntax
+
 " Other plugins
 " ==============
   Plug 'elzr/vim-json'                                    " json syntax
