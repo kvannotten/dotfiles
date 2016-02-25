@@ -53,7 +53,7 @@ call plug#begin('~/.config/nvim/plugged')
 
 " Elm plugins
 " ============
-  Plug 'lambdatoast/elm.vim'                              " elm syntax
+  Plug 'ElmCast/elm-vim'                                  " elm syntax
 
 " Other plugins
 " ==============
