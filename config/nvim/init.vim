@@ -28,7 +28,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'othree/eregex.vim'                                " allows perl regex
   Plug 'scrooloose/syntastic'                             " syntax checking
   Plug 'simnalamburt/vim-mundo'                           " visualize undo tree
-  Plug 'bkad/CamelCaseMotion'                             " camelcase motions
+  Plug 'chaoren/vim-wordmotion'                           " camelcase motions
 
 " >> Misc
   Plug 'Shougo/echodoc.vim'                               " show method prototype in echo window
@@ -498,16 +498,8 @@ nnoremap <F6> :MundoToggle<cr>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => CamelCaseMotion
+" => vim word motion
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-map <silent> w <Plug>CamelCaseMotion_w
-map <silent> b <Plug>CamelCaseMotion_b
-map <silent> e <Plug>CamelCaseMotion_e
-map <silent> ge <Plug>CamelCaseMotion_ge
-sunmap w
-sunmap b
-sunmap e
-sunmap ge
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
