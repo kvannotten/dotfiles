@@ -24,6 +24,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'ctrlpvim/ctrlp.vim'                               " file searcher
   Plug 'ervandew/supertab'                                " tab completion
   Plug 'xolox/vim-misc' | Plug 'xolox/vim-easytags'       " ctags support
+  Plug 'majutsushi/tagbar'                                " tagbar
   Plug 'othree/eregex.vim'                                " allows perl regex
   Plug 'scrooloose/syntastic'                             " syntax checking
   Plug 'simnalamburt/vim-mundo'                           " visualize undo tree
@@ -250,15 +251,15 @@ nmap <leader>bq :bp <BAR> bd #<CR>
 map <leader>ba :1,1000 bd!<cr>
 
 " Useful mappings for managing tabs
-map <leader>tn :tabnew<cr>
-map <leader>to :tabonly<cr>
-map <leader>tc :tabclose<cr>
-map <leader>tm :tabmove
-map <leader>t<leader> :tabnext
+" map <leader>tn :tabnew<cr>
+" map <leader>to :tabonly<cr>
+" map <leader>tc :tabclose<cr>
+" map <leader>tm :tabmove
+" map <leader>t<leader> :tabnext
 
 " Opens a new tab with the current buffer's path
 " Super useful when editing files in the same directory
-map <leader>te :tabedit <c-r>=expand("%:p:h")<cr>/
+" map <leader>te :tabedit <c-r>=expand("%:p:h")<cr>/
 
 " Switch CWD to the directory of the open buffer
 map <leader>cd :cd %:p:h<cr>:pwd<cr>
@@ -493,6 +494,40 @@ let g:syntastic_check_on_wq = 0
 " => vim-mundo
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <F6> :MundoToggle<cr>
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => tagbar
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nmap <leader>t :TagbarToggle<cr>
+let g:tagbar_type_go = {
+    \ 'ctagstype' : 'go',
+    \ 'kinds'     : [
+        \ 'p:package',
+        \ 'i:imports:1',
+        \ 'c:constants',
+        \ 'v:variables',
+        \ 't:types',
+        \ 'n:interfaces',
+        \ 'w:fields',
+        \ 'e:embedded',
+        \ 'm:methods',
+        \ 'r:constructor',
+        \ 'f:functions'
+    \ ],
+    \ 'sro' : '.',
+    \ 'kind2scope' : {
+        \ 't' : 'ctype',
+        \ 'n' : 'ntype'
+    \ },
+    \ 'scope2kind' : {
+        \ 'ctype' : 't',
+        \ 'ntype' : 'n'
+    \ },
+    \ 'ctagsbin'  : 'gotags',
+    \ 'ctagsargs' : '-sort -silent'
+    \ }
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => rainbow

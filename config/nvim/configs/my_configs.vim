@@ -39,3 +39,5 @@ set mouse=a " enable mouse in all modes
 let g:jsx_ext_required=0
 
 set foldmethod=marker
+
+let g:elm_detailed_complete = 1
