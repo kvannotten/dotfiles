@@ -34,6 +34,9 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'Shougo/echodoc.vim'                               " show method prototype in echo window
   Plug 'luochen1990/rainbow'                              " give each matching parens different colors
 
+" >> Colors
+  Plug 'morhetz/gruvbox'                                  " gruvbox colors
+
 " Ruby Plugins
 " ==============
   Plug 'osyo-manga/vim-monster', { 'for': ['rb', 'erb'] } " ruby code completion
@@ -164,7 +167,8 @@ set pumheight=10 " max height for pum
 syntax enable
 
 try
-    colorscheme desert
+    let g:gruvbox_italic=1
+    colorscheme gruvbox
 catch
 endtry
 
@@ -446,7 +450,7 @@ let g:multi_cursor_quit_key='<Esc>'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => vim-airline config (force color)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:airline_theme="solarized"
+let g:airline_theme="gruvbox"
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
 
