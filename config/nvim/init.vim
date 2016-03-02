@@ -55,6 +55,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'pangloss/vim-javascript'                          " more js stuff + css
   Plug 'ternjs/tern_for_vim'                              " javascript syntax checking
   Plug 'mxw/vim-jsx'                                      " jsx syntax checking
+  Plug 'carlitux/deoplete-ternjs'                         " deoplete ternjs
 
 " Elm plugins
 " ============

@@ -41,3 +41,6 @@ let g:jsx_ext_required=0
 set foldmethod=marker
 
 let g:elm_detailed_complete = 1
+
+set tags=./tags
+let g:easytags_dynamic_files = 1
