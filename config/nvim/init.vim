@@ -394,6 +394,7 @@ endtry
 """"""""""""""""""""""""""""""
 " => CTRL-P
 """"""""""""""""""""""""""""""
+" {{{
 let g:ctrlp_working_path_mode = 0
 
 let g:ctrlp_map = '<c-f>'
@@ -409,33 +410,33 @@ let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --hidden
       \ --ignore .DS_Store
       \ --ignore "**/*.pyc"
       \ -g ""'
+" }}}
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Nerd Tree
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" {{{
 map <leader>nn :NERDTreeToggle<cr>
 map <leader>nb :NERDTreeFromBookmark
 map <leader>nf :NERDTreeFind<cr>
+" }}}
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Deoplete
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" enable deoplete
 let g:deoplete#enable_at_startup = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Echodoc
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" enable echodoc on startup
 let g:echodoc_enable_at_startup = 1
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => EasyAlign
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" easy align
 vmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
@@ -443,17 +444,21 @@ nmap ga <Plug>(EasyAlign)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => vim-multiple-cursors
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" {{{
 let g:multi_cursor_use_default_mapping=0
 let g:multi_cursor_next_key='<C-z>'
 let g:multi_cursor_quit_key='<Esc>'
+" }}}
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => vim-airline config (force color)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" {{{
 let g:airline_theme="gruvbox"
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
+" }}}
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -472,6 +477,7 @@ let g:vim_json_syntax_conceal = 0
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => vim-go
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" {{{
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
@@ -481,11 +487,13 @@ let g:go_highlight_build_constraints = 1
 let g:go_fmt_command = "goimports"
 let g:go_fmt_fail_silently = 0
 let g:go_fmt_autosave = 1
+" }}}
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => syntastic
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" {{{
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -494,7 +502,7 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-
+"}}}
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => vim-mundo
@@ -510,6 +518,7 @@ nnoremap <F6> :MundoToggle<cr>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => tagbar
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" {{{
 nmap <leader>t :TagbarToggle<cr>
 let g:tagbar_type_go = {
     \ 'ctagstype' : 'go',
@@ -538,11 +547,13 @@ let g:tagbar_type_go = {
     \ 'ctagsbin'  : 'gotags',
     \ 'ctagsargs' : '-sort -silent'
     \ }
+" }}}
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => rainbow
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" {{{
 let g:rainbow_active = 1
 let g:rainbow_conf = {
 \   'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick'],
@@ -569,12 +580,13 @@ let g:rainbow_conf = {
 \       'css': 0,
 \   }
 \}
-
+" }}}
 
 
 "==============================================================
 " HELPER FUNCTIONS
 "==============================================================
+" {{{
 function! CmdLine(str)
     exe "menu Foo.Bar :" . a:str
     emenu Foo.Bar
@@ -656,6 +668,7 @@ func! CurrentFileDir(cmd)
     return a:cmd . " " . expand("%:p:h") . "/"
 endfunc
 
+" }}}
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 " END OF CONFIG
 """"""""""""""""""""""""""""""""""""""""""""""""""""
