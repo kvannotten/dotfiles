@@ -1,0 +1,20 @@
+# ~/.tmuxinator/scheduler.yml
+
+name: scheduler
+root: ~/go/src/github.com/confabhq/scheduler
+
+# Optional tmux socket
+socket_path: /tmp/scheduler.sock
+
+windows:
+  - editor:
+      layout: main-vertical
+      panes:
+        - nvim
+  - server: 
+      layout: tiled
+      panes:
+        - psql -h ps.home.lan --user confab confab
+        - psql --user confab confab
+        - 
+

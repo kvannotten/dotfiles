@@ -1,0 +1,32 @@
+# ~/.tmuxinator/confab.yml
+
+name: confab
+root: ~/go/src/github.com/confabhq/confabapi
+
+# Optional tmux socket
+socket_path: /tmp/confab.sock
+
+# Runs before everything. Use it to start daemons etc.
+# pre: sudo /etc/rc.d/mysqld start
+
+# Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
+# pre_window: rbenv shell 2.0.0-p247
+
+# Pass command line options to tmux. Useful for specifying a different tmux.conf.
+# tmux_options: -f ~/.tmux.mac.conf
+
+# Change the command to call tmux.  This can be used by derivatives/wrappers like byobu.
+# tmux_command: byobu
+
+windows:
+  - editor:
+      layout: e4ed,191x54,0,0{133x54,0,0,0,57x54,134,0[57x39,134,0,2,57x14,134,40,3]}
+      panes:
+        - nvim
+        - rerun -x -p '*.go' -- godep go test -v
+        - gin
+  - utility: 
+      layout: tiled
+      panes:
+        - psql -h ps.home.lan --user confab confab
+        - 
