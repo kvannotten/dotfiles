@@ -59,11 +59,12 @@ call plug#begin('~/.config/nvim/plugged')
 
 " Elm plugins
 " ============
-  Plug 'ElmCast/elm-vim'                                  " elm syntax
+  Plug 'ElmCast/elm-vim', { 'for': ['elm'] }              " elm syntax
 
 " Other plugins
 " ==============
-  Plug 'elzr/vim-json'                                    " json syntax
+  Plug 'elzr/vim-json', { 'for': ['json'] }               " json syntax
+  Plug 'suan/vim-instant-markdown', { 'for': ['md'] }     " markdown preview
 
 "}}}
 call plug#end()
