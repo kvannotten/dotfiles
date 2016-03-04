@@ -459,6 +459,7 @@ let g:multi_cursor_quit_key='<Esc>'
 let g:airline_theme="gruvbox"
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
+let g:airline_powerline_fonts = 1
 " }}}
 
 
