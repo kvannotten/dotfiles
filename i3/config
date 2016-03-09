@@ -19,7 +19,7 @@ bindsym $mod+Shift+q kill
 # use rofi for app launching
 bindsym $mod+d exec rofi -modi "run" -show run -w 100 -font "Hack 10" -fg "#505050" -bg "#000000" -hlfg "#ffb964" -hlbg "#000000" -o 85
 bindsym $mod+shift+d exec --no-startup-id i3-dmenu-desktop --dmenu='rofi -dmenu'
-bindsym $mod+ctrl+space exec tac /tmp/clipd.data | rofi -dmenu -w 100 -font "Hack 10" -fg "#505050" -bg "#000000" -hlfg "#ffb964" -hlbg "#000000" -o 85 | xclip -selection clipboard
+bindsym $mod+ctrl+space exec tac /tmp/clipd.data  | uniq | rofi -dmenu -w 100 -font "Hack 10" -fg "#505050" -bg "#000000" -hlfg "#ffb964" -hlbg "#000000" -o 85 | xclip -selection clipboard
 
 # change focus
 bindsym $mod+j focus left
@@ -260,7 +260,7 @@ exec --no-startup-id volumeicon
 #exec --no-startup-id copyq
 
 # start clipd
-exec --no-startup-id /home/kristof/bin/clipd
+exec --no-startup-id /home/kristof/bin/clipd -p /tmp/clipd.data
 
 # start dunst notification server
 exec --no-startup-id dunst
