@@ -65,6 +65,7 @@ call plug#begin('~/.config/nvim/plugged')
 " ==============
   Plug 'elzr/vim-json', { 'for': ['json'] }               " json syntax
   Plug 'suan/vim-instant-markdown', { 'for': ['md'] }     " markdown preview
+  Plug 'zchee/deoplete-clang', { 'for': ['c', 'h'] }      " c complete
 
 "}}}
 call plug#end()
@@ -584,6 +585,14 @@ let g:rainbow_conf = {
 \}
 " }}}
 
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => deoplete-clang
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:deoplete#sources#clang#libclang_path = '/usr/lib/libclang.so'
+let g:deoplete#sources#clang#clang_header  = '/usr/include/clang'
+let g:deoplete#sources#clang#std#c         = 'c11'
+let g:deoplete#sources#clang#sort_algo = 'priority'
 
 "==============================================================
 " HELPER FUNCTIONS
