@@ -589,10 +589,28 @@ let g:rainbow_conf = {
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => deoplete-clang
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"{{{
 let g:deoplete#sources#clang#libclang_path = '/usr/lib/libclang.so'
 let g:deoplete#sources#clang#clang_header  = '/usr/include/clang'
 let g:deoplete#sources#clang#std#c         = 'c11'
 let g:deoplete#sources#clang#sort_algo = 'priority'
+"}}}
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => easytags
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"{{{
+let g:easytags_languages = {
+\   'go': {
+\     'cmd': 'gotags',
+\     'args': [],
+\     'fileoutput_opt': '-f',
+\     'stdout_opt': '-L=-',
+\     'recurse_flag': '-R'
+\   }
+\}
+"}}}
 
 "==============================================================
 " HELPER FUNCTIONS
