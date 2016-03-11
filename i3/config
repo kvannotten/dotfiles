@@ -70,7 +70,7 @@ bindsym $mod+a focus parent
 
 # name workspaces
 set $tag1 "1:general"
-set $tag2 "2:chromium"
+set $tag2 "2:web"
 set $tag7 "7:libreoffice"
 set $tag8 "8:factorio"
 set $tag9 "9:gimp"
@@ -250,8 +250,8 @@ exec feh --bg-scale '/home/kristof/img/wallpaper-05.png'
 exec --no-startup-id "i3-msg 'workspace 1:general; append_layout /home/kristof/.i3/workspace-1.json'"
  exec --no-startup-id i3-msg workspace '1:general; exec termite --name gen'
 
-exec --no-startup-id "i3-msg 'workspace 2:chromium; append_layout /home/kristof/.i3/workspace-2.json'"
-   exec --no-startup-id i3-msg workspace '2:chromium; exec /usr/bin/chromium'
+exec --no-startup-id "i3-msg 'workspace 2:web; append_layout /home/kristof/.i3/workspace-2.json'"
+   exec --no-startup-id i3-msg workspace '2:web; exec /usr/bin/chromium'
 
 # start volumeicon
 exec --no-startup-id volumeicon
