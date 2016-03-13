@@ -151,14 +151,25 @@ bindsym $mod+Shift+s sticky toggle
 # Rename workspace
 bindsym $mod+q exec i3-input -F 'rename workspace to "%s"' -P 'New name: '
 
+# Music
+set $music "Music (n) next track, (b) prev track, (SPC) pause, (p) play, (s) stop"
+mode $music {
+  bindsym n exec mpc -q next, mode "default"
+  bindsym b exec mpc -q prev, mode "default"
+  bindsym space exec mpc -q pause, mode "default"
+  bindsym p exec mpc -q play, mode "default"
+  bindsym s exec mpc -q stop, mode "default"
+}
+bindsym $mod+Ctrl+m mode $music
+
 # Start i3bar to display a workspace bar
 bar {
   # status_command i3status
   output DVI-I-3
   status_command $HOME/bin/conky-i3bar
   position bottom
-
   workspace_buttons yes
+
   colors{
     background #2C2C2C
     statusline #00C1FF
@@ -176,12 +187,10 @@ bar {
 
 bar {
   output DVI-I-2
-  tray_output none
-  status_command i3status -c $HOME/.config/i3/left-bar
-
+  status_command $HOME/bin/conky-i3bar_left
   position bottom
-
   workspace_buttons yes
+
   colors{
     background #2C2C2C
     statusline #00C1FF
