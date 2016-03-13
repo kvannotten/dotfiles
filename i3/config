@@ -81,12 +81,12 @@ set $tag8 "8 factorio"
 set $tag9 "9 gimp"
 
 # assign workspaces to monitor
-workspace 1 output DVI-I-3
-workspace 2 output DVI-I-3
-workspace 3 output DVI-I-3
-workspace 4 output DVI-I-3
+workspace $tag1 output DVI-I-3
+workspace $tag2 output DVI-I-3
+workspace $tag3 output DVI-I-3
+workspace $tag4 output DVI-I-3
 
-workspace 5 output DVI-I-2
+workspace $tag5 output DVI-I-2
 
 # move workspace to monitor
 bindsym $mod+m move workspace to output left
@@ -201,10 +201,9 @@ bar {
 set $Locker /home/kristof/bin/lock && sleep 1
 
 # options to turn off/restart/lock the computer
-set $mode_system System (l) lock, (e) logout, (r) reboot, (q) shutdown
-mode "$mode_system" {
+set $mode_system " (l)ock,  (r)eboot,   (q)shutdown"
+mode $mode_system {
   bindsym l exec --no-startup-id $Locker, mode "default"
-  bindsym e exec --no-startup-id i3-msg exit, mode "default"
   bindsym r exec --no-startup-id systemctl reboot, mode "default"
   bindsym q exec --no-startup-id systemctl poweroff -i, mode "default"
 
@@ -212,8 +211,8 @@ mode "$mode_system" {
   bindsym Return mode "default"
   bindsym Escape mode "default"
 }
+bindsym $mod+Pause mode $mode_system
 
-bindsym $mod+Pause mode "$mode_system"
 bindsym $mod+Escape exec /home/kristof/bin/shutdown-menu
 
 # Take screenshots
@@ -254,7 +253,7 @@ for_window [class="MPlayer"] floating enable
 set $browser = chromium
 
 # do wallpaper
-exec feh --bg-scale '/home/kristof/img/wallpaper-05.png'
+exec_always feh --bg-scale '/home/kristof/img/wallpaper-05.png'
 
 # Restore layout
 exec --no-startup-id i3-msg 'workspace $tag1; append_layout /home/kristof/.i3/workspace-1.json'
@@ -262,9 +261,6 @@ exec --no-startup-id i3-msg 'workspace $tag1; exec termite --name gen'
 
 exec --no-startup-id i3-msg 'workspace $tag2; append_layout /home/kristof/.i3/workspace-2.json'
 exec --no-startup-id i3-msg 'workspace $tag2; exec /usr/bin/chromium'
-
-# start volumeicon
-exec --no-startup-id volumeicon
 
 # start clipd
 exec --no-startup-id i3-msg '/home/kristof/bin/clipd -p /tmp/clipd.data'
