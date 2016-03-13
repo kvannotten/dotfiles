@@ -26,7 +26,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'xolox/vim-misc' | Plug 'xolox/vim-easytags'       " ctags support
   Plug 'majutsushi/tagbar'                                " tagbar
   Plug 'othree/eregex.vim'                                " allows perl regex
-  Plug 'scrooloose/syntastic'                             " syntax checking
+  "Plug 'scrooloose/syntastic'                             " syntax checking
   Plug 'simnalamburt/vim-mundo'                           " visualize undo tree
   Plug 'chaoren/vim-wordmotion'                           " camelcase motions
 
@@ -494,17 +494,24 @@ let g:go_fmt_autosave = 1
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => syntastic
+" => syntastic/neomake
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " {{{
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
+"
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 0
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+autocmd! BufWritePost * Neomake
+let g:neomake_javascript_jshint_maker = {
+      \ 'args': ['--verbose'],
+      \ 'errorformat': '%A%f: line %1\, col %v, %m \(%t%*\d\)',
+      \}
+let g:neomake_javascript_enabled_makers = ['jshint']
 "}}}
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
