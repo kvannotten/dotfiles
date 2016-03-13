@@ -117,26 +117,26 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
+  # These bindings trigger as soon as you enter the resize mode
 
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
+  # Pressing left will shrink the window’s width.
+  # Pressing right will grow the window’s width.
+  # Pressing up will shrink the window’s height.
+  # Pressing down will grow the window’s height.
+  bindsym j resize shrink width 10 px or 10 ppt
+  bindsym k resize grow height 10 px or 10 ppt
+  bindsym l resize shrink height 10 px or 10 ppt
+  bindsym semicolon resize grow width 10 px or 10 ppt
 
-        # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+  # same bindings, but for the arrow keys
+  bindsym Left resize shrink width 10 px or 10 ppt
+  bindsym Down resize grow height 10 px or 10 ppt
+  bindsym Up resize shrink height 10 px or 10 ppt
+  bindsym Right resize grow width 10 px or 10 ppt
 
-        # back to normal: Enter or Escape
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
+  # back to normal: Enter or Escape
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
 }
 
 bindsym $mod+r mode "resize"
@@ -146,17 +146,17 @@ bindsym $mod+q exec i3-input -F 'rename workspace to "%s"' -P 'New name: '
 
 # Start i3bar to display a workspace bar
 bar {
-  #status_command i3status
+  # status_command i3status
   output DVI-I-3
-	status_command $HOME/bin/conky-i3bar
-	position bottom
+  status_command $HOME/bin/conky-i3bar
+  position bottom
 
-	workspace_buttons yes
+  workspace_buttons yes
   colors{
     background #2C2C2C
     statusline #00C1FF
     separator #DDDDDD
-    #                  BORDER  BACKGR. TEXT
+#                  BORDER  BACKGR. TEXT
     focused_workspace  #2C2C2C #2C2C2C #00C1FF
     active_workspace   #2C2C2C #2C2C2C #DDDDDD
     inactive_workspace #2C2C2C #2C2C2C #DDDDDD
@@ -172,14 +172,14 @@ bar {
   tray_output none
   status_command i3status -c $HOME/.config/i3/left-bar
 
-	position bottom
+  position bottom
 
-	workspace_buttons yes
+  workspace_buttons yes
   colors{
     background #2C2C2C
     statusline #00C1FF
     separator #DDDDDD
-    #                  BORDER  BACKGR. TEXT
+#                  BORDER  BACKGR. TEXT
     focused_workspace  #2C2C2C #2C2C2C #00C1FF
     active_workspace   #2C2C2C #2C2C2C #DDDDDD
     inactive_workspace #2C2C2C #2C2C2C #DDDDDD
@@ -196,14 +196,14 @@ set $Locker /home/kristof/bin/lock && sleep 1
 # options to turn off/restart/lock the computer
 set $mode_system System (l) lock, (e) logout, (r) reboot, (q) shutdown
 mode "$mode_system" {
-    bindsym l exec --no-startup-id $Locker, mode "default"
-    bindsym e exec --no-startup-id i3-msg exit, mode "default"
-    bindsym r exec --no-startup-id systemctl reboot, mode "default"
-    bindsym q exec --no-startup-id systemctl poweroff -i, mode "default"
+  bindsym l exec --no-startup-id $Locker, mode "default"
+  bindsym e exec --no-startup-id i3-msg exit, mode "default"
+  bindsym r exec --no-startup-id systemctl reboot, mode "default"
+  bindsym q exec --no-startup-id systemctl poweroff -i, mode "default"
 
-    # back to normal: Enter or Escape
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
+  # back to normal: Enter or Escape
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
 }
 
 bindsym $mod+Pause mode "$mode_system"
@@ -214,6 +214,9 @@ bindsym $mod+Shift+p exec /home/kristof/bin/screenshot.sh
 
 # Pause/play mplayer
 bindsym $mod+p exec echo "pause" > $HOME/.mplayer/pipe
+
+# Float a window, sticky it and move it to a corner
+bindsym $mod+Shift+m floating enable; resize set 600px 400px; sticky enable; move window to position 1320px 0 px
 
 # Assign applications to workspaces
 assign [class="Gimp"] 9:gimp
@@ -248,10 +251,10 @@ exec feh --bg-scale '/home/kristof/img/wallpaper-05.png'
 
 # Restore layout
 exec --no-startup-id "i3-msg 'workspace 1:general; append_layout /home/kristof/.i3/workspace-1.json'"
- exec --no-startup-id i3-msg workspace '1:general; exec termite --name gen'
+exec --no-startup-id i3-msg workspace '1:general; exec termite --name gen'
 
 exec --no-startup-id "i3-msg 'workspace 2:web; append_layout /home/kristof/.i3/workspace-2.json'"
-   exec --no-startup-id i3-msg workspace '2:web; exec /usr/bin/chromium'
+exec --no-startup-id i3-msg workspace '2:web; exec /usr/bin/chromium'
 
 # start volumeicon
 exec --no-startup-id volumeicon
