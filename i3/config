@@ -69,9 +69,14 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 
 # name workspaces
-set $tag1 "1:general"
-set $tag2 "2:web"
-set $tag7 "7:libreoffice"
+set $tag0 "0"
+set $tag1 "1:"
+set $tag2 "2:"
+set $tag3 "3:"
+set $tag4 "4:"
+set $tag5 "5:krow"
+set $tag6 "6:?"
+set $tag7 "7:"
 set $tag8 "8:factorio"
 set $tag9 "9:gimp"
 
@@ -87,28 +92,28 @@ workspace 5 output DVI-I-2
 bindsym $mod+m move workspace to output left
 
 # switch to workspace
-bindsym $mod+1 workspace number 1
-bindsym $mod+2 workspace number 2
-bindsym $mod+3 workspace number 3
-bindsym $mod+4 workspace number 4
-bindsym $mod+5 workspace number 5
-bindsym $mod+6 workspace number 6
-bindsym $mod+7 workspace number 7
-bindsym $mod+8 workspace number 8
-bindsym $mod+9 workspace number 9
-bindsym $mod+0 workspace number 10
+bindsym $mod+1 workspace $tag1
+bindsym $mod+2 workspace $tag2
+bindsym $mod+3 workspace $tag3
+bindsym $mod+4 workspace $tag4
+bindsym $mod+5 workspace $tag5
+bindsym $mod+6 workspace $tag6
+bindsym $mod+7 workspace $tag7
+bindsym $mod+8 workspace $tag8
+bindsym $mod+9 workspace $tag9
+bindsym $mod+0 workspace $tag0
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace number 1
-bindsym $mod+Shift+2 move container to workspace number 2
-bindsym $mod+Shift+3 move container to workspace number 3
-bindsym $mod+Shift+4 move container to workspace number 4
-bindsym $mod+Shift+5 move container to workspace number 5
-bindsym $mod+Shift+6 move container to workspace number 6
-bindsym $mod+Shift+7 move container to workspace number 7
-bindsym $mod+Shift+8 move container to workspace number 8
-bindsym $mod+Shift+9 move container to workspace number 9
-bindsym $mod+Shift+0 move container to workspace number 10
+bindsym $mod+Shift+1 move container to workspace $tag1
+bindsym $mod+Shift+2 move container to workspace $tag2
+bindsym $mod+Shift+3 move container to workspace $tag3
+bindsym $mod+Shift+4 move container to workspace $tag4
+bindsym $mod+Shift+5 move container to workspace $tag5
+bindsym $mod+Shift+6 move container to workspace $tag6
+bindsym $mod+Shift+7 move container to workspace $tag7
+bindsym $mod+Shift+8 move container to workspace $tag8
+bindsym $mod+Shift+9 move container to workspace $tag9
+bindsym $mod+Shift+0 move container to workspace $tag0
 
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
@@ -219,10 +224,10 @@ bindsym $mod+p exec echo "pause" > $HOME/.mplayer/pipe
 bindsym $mod+Shift+m floating enable; resize set 600px 400px; sticky enable; move window to position 1320px 0 px
 
 # Assign applications to workspaces
-assign [class="Gimp"] 9:gimp
-assign [class="factorio"] 8:factorio
-assign [class="libreoffice"] 7:libreoffice
-assign [class="Thunderbird"] 4:mail
+assign [class="Gimp"] $tag9
+assign [class="factorio"] $tag8
+assign [class="libreoffice"] $tag7
+assign [class="Thunderbird"] $tag4
 
 # windows without borders
 new_window pixel 4
@@ -250,11 +255,11 @@ set $browser = chromium
 exec feh --bg-scale '/home/kristof/img/wallpaper-05.png'
 
 # Restore layout
-exec --no-startup-id "i3-msg 'workspace 1:general; append_layout /home/kristof/.i3/workspace-1.json'"
-exec --no-startup-id i3-msg workspace '1:general; exec termite --name gen'
+exec --no-startup-id i3-msg 'workspace $tag1; append_layout /home/kristof/.i3/workspace-1.json'
+exec --no-startup-id i3-msg 'workspace $tag1; exec termite --name gen'
 
-exec --no-startup-id "i3-msg 'workspace 2:web; append_layout /home/kristof/.i3/workspace-2.json'"
-exec --no-startup-id i3-msg workspace '2:web; exec /usr/bin/chromium'
+exec --no-startup-id i3-msg 'workspace $tag2; append_layout /home/kristof/.i3/workspace-2.json'
+exec --no-startup-id i3-msg 'workspace $tag2; exec /usr/bin/chromium'
 
 # start volumeicon
 exec --no-startup-id volumeicon
@@ -263,7 +268,7 @@ exec --no-startup-id volumeicon
 #exec --no-startup-id copyq
 
 # start clipd
-exec --no-startup-id /home/kristof/bin/clipd -p /tmp/clipd.data
+exec --no-startup-id i3-msg '/home/kristof/bin/clipd -p /tmp/clipd.data'
 
 # start dunst notification server
 exec --no-startup-id dunst
