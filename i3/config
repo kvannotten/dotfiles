@@ -70,15 +70,15 @@ bindsym $mod+a focus parent
 
 # name workspaces
 set $tag0 "0"
-set $tag1 "1:"
-set $tag2 "2:"
-set $tag3 "3:"
-set $tag4 "4:"
-set $tag5 "5:krow"
-set $tag6 "6:?"
-set $tag7 "7:"
-set $tag8 "8:factorio"
-set $tag9 "9:gimp"
+set $tag1 "1 "
+set $tag2 "2 "
+set $tag3 "3 "
+set $tag4 "4 "
+set $tag5 "5 krow"
+set $tag6 "6 "
+set $tag7 "7 "
+set $tag8 "8 factorio"
+set $tag9 "9 gimp"
 
 # assign workspaces to monitor
 workspace 1 output DVI-I-3
@@ -121,6 +121,7 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
+bindsym $mod+r mode "resize"
 mode "resize" {
   # These bindings trigger as soon as you enter the resize mode
 
@@ -144,7 +145,8 @@ mode "resize" {
   bindsym Escape mode "default"
 }
 
-bindsym $mod+r mode "resize"
+# Sticky window
+bindsym $mod+Shift+s sticky toggle
 
 # Rename workspace
 bindsym $mod+q exec i3-input -F 'rename workspace to "%s"' -P 'New name: '
@@ -263,9 +265,6 @@ exec --no-startup-id i3-msg 'workspace $tag2; exec /usr/bin/chromium'
 
 # start volumeicon
 exec --no-startup-id volumeicon
-
-# start copyq
-#exec --no-startup-id copyq
 
 # start clipd
 exec --no-startup-id i3-msg '/home/kristof/bin/clipd -p /tmp/clipd.data'
