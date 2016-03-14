@@ -64,7 +64,7 @@ call plug#begin('~/.config/nvim/plugged')
 " Other plugins
 " ==============
   Plug 'elzr/vim-json', { 'for': ['json'] }               " json syntax
-  Plug 'suan/vim-instant-markdown', { 'for': ['md'] }     " markdown preview
+  Plug 'suan/vim-instant-markdown'                        " markdown preview
   Plug 'zchee/deoplete-clang', { 'for': ['c', 'h'] }      " c complete
 
 "}}}
