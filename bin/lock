@@ -13,10 +13,8 @@ LOCK=$HOME/bin/lock.png
 maim --geometry=1920x1080+0+0 $IMAGE1
 maim --geometry=1920x1080+1920+0 $IMAGE2
 
-#convert $IMAGE1 -level 0%,100%,0.6 -blur $BLURTYPE -font Liberation-Sans -pointsize 26 -fill white -gravity center -annotate +0+200 'Type password to unlock' - | composite -gravity center $LOCK - $IMAGE1
-#convert $IMAGE2 -level 0%,100%,0.6 -blur $BLURTYPE -font Liberation-Sans -pointsize 26 -fill white -gravity center -annotate +0+200 'Type password to unlock' - | composite -gravity center $LOCK - $IMAGE2
-convert $IMAGE1 -scale 10% -scale 1000% -font Liberation-Sans -pointsize 26 -fill white -gravity center -annotate +0+200 'Type password to unlock' - | composite -gravity center $LOCK - $IMAGE1
-convert $IMAGE2 -scale 10% -scale 1000% -font Liberation-Sans -pointsize 26 -fill white -gravity center -annotate +0+200 'Type password to unlock' - | composite -gravity center $LOCK - $IMAGE2
+convert $IMAGE1 -scale 10% -scale 1000% -font Hack  -pointsize 26 -fill white -gravity center -annotate +0+200 'Type password to unlock' - | composite -gravity center $LOCK - $IMAGE1
+convert $IMAGE2 -scale 10% -scale 1000% -font Hack  -pointsize 26 -fill white -gravity center -annotate +0+200 'Type password to unlock' - | composite -gravity center $LOCK - $IMAGE2
 
 # merge images
 convert +append $IMAGE1 $IMAGE2 $FINAL
