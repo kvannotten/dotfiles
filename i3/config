@@ -170,19 +170,17 @@ bar {
   position bottom
   workspace_buttons yes
 
-  colors{
-    background #2C2C2C
-    statusline #00C1FF
-    separator #DDDDDD
-#                  BORDER  BACKGR. TEXT
-    focused_workspace  #2C2C2C #2C2C2C #00C1FF
-    active_workspace   #2C2C2C #2C2C2C #DDDDDD
-    inactive_workspace #2C2C2C #2C2C2C #DDDDDD
-    urgent_workspace   #2C2C2C #2C2C2C #DDDDDD
-  }
-
   # Font for the bar
   font pango:Hack, Icons 12
+  colors {
+    separator #928374
+    background #282828
+    statusline #ebdbb2
+    focused_workspace #689d6a #689d6a #282828
+    active_workspace #1d2021 #1d2021 #928374
+    inactive_workspace #32302f #32302f #928374
+    urgent_workspace #cc241d #cc241d #ebdbb2
+  }
 }
 
 bar {
@@ -191,19 +189,17 @@ bar {
   position bottom
   workspace_buttons yes
 
-  colors{
-    background #2C2C2C
-    statusline #00C1FF
-    separator #DDDDDD
-#                  BORDER  BACKGR. TEXT
-    focused_workspace  #2C2C2C #2C2C2C #00C1FF
-    active_workspace   #2C2C2C #2C2C2C #DDDDDD
-    inactive_workspace #2C2C2C #2C2C2C #DDDDDD
-    urgent_workspace   #2C2C2C #2C2C2C #DDDDDD
-  }
-
   # Font for the bar
   font pango:Hack, Icons 12
+  colors {
+    separator #928374
+    background #282828
+    statusline #ebdbb2
+    focused_workspace #689d6a #689d6a #282828
+    active_workspace #1d2021 #1d2021 #928374
+    inactive_workspace #32302f #32302f #928374
+    urgent_workspace #cc241d #cc241d #ebdbb2
+  }
 }
 
 # Lock screen
@@ -282,3 +278,8 @@ exec conky -c /home/kristof/.config/conky/conky_right_side
 
 # start redshift
 exec --no-startup-id redshift
+
+client.focused #689d6a #689d6a #282828 #282828
+client.focused_inactive #1d2021 #1d2021 #928374 #282828
+client.unfocused #32302f #32302f #928374 #282828
+client.urgent #cc241d #cc241d #ebdbb2 #282828
