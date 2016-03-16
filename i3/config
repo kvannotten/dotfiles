@@ -321,7 +321,7 @@ exec --no-startup-id i3-msg 'workspace $tag2; append_layout /home/kristof/.i3/wo
 exec --no-startup-id i3-msg 'workspace $tag2; exec /usr/bin/chromium'
 
 # start clipd
-exec --no-startup-id i3-msg 'exec /home/kristof/bin/clipd -p /tmp/clipd.data'
+exec --no-startup-id i3-msg '/home/kristof/bin/clipd -p /tmp/clipd.data'
 
 # start dunst notification server
 exec --no-startup-id dunst
