@@ -1,0 +1,16 @@
+/***********************
+ * Rofi
+ * ********************/
+
+rofi.lines:              4
+rofi.eh:                 2
+rofi.width:              1920
+rofi.padding:            460
+rofi.location:           0
+rofi.bw:                 0
+rofi.bc:                 #202020
+rofi.bg:                 argb:    EE202020
+rofi.fg:                 #FFFFFF
+rofi.hlbg:               #8FA388
+rofi.hlfg:               #FFFFFF
+rofi.fake-transparency:  true
