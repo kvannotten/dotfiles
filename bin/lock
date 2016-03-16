@@ -8,7 +8,7 @@
 IMAGE1=/tmp/i3lock_0.png
 IMAGE2=/tmp/i3lock_1.png
 FINAL=/tmp/i3lock.png
-LOCK=$HOME/bin/lock.png
+LOCK=$HOME/img/lock.png
 PIPE=/tmp/lock_pipe
 
 # Create temporary fifo pipe
