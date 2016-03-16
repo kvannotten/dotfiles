@@ -17,7 +17,7 @@ bindsym $mod+Shift+Return exec termite --directory=`xcwd`
 bindsym $mod+Shift+q kill
 
 # use rofi for app launching
-bindsym $mod+d exec rofi -modi "run" -show run -w 100 -font "Hack 10" -fg "#505050" -bg "#000000" -hlfg "#ffb964" -hlbg "#000000" -o 85
+bindsym $mod+d exec rofi -modi "run" -show run -lines 4 -eh 2 -width 1920 -padding 460 -location 0 -bw 0 -bc "#202020" -bg "argb:EE202020" -fg "#FFFFFF" -hlbg "#8FA388" -hlfg "#FFFFFF" -fake-transparency
 bindsym $mod+shift+d exec --no-startup-id i3-dmenu-desktop --dmenu='rofi -dmenu'
 bindsym $mod+ctrl+space exec tac /tmp/clipd.data  | uniq | rofi -dmenu -w 100 -font "Hack 10" -fg "#505050" -bg "#000000" -hlfg "#ffb964" -hlbg "#000000" -o 85 | xclip -selection clipboard
 
