@@ -19,6 +19,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'justinmk/vim-sneak'                               " missing motion for vim (s)
   Plug 'tpope/vim-endwise'                                " end structures like if, def, ...
   Plug 'junegunn/vim-easy-align'                          " align code on chars
+  Plug 'godlygeek/tabular'                                " tabularize stuff
 
 " >> Functionality
   Plug 'ctrlpvim/ctrlp.vim'                               " file searcher
