@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+
+I3_DATE=$(date '+%d %b %Y %H:%M:%S')
+
+echo $I3_DATE
+echo $I3_DATE
+echo 
+
