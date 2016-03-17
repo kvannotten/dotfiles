@@ -6,3 +6,4 @@ echo $I3_DATE
 echo $I3_DATE
 echo 
 
+exit 0

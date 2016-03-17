@@ -1,3 +1,6 @@
+[memory]
+interval=10
+
 [music_label]
 command=echo 
 color=#689d6a

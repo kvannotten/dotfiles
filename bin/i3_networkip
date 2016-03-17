@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+
+echo $(ifconfig enp0s31f6 | grep 'inet ' | tr -s ' ' | cut -d ' ' -f 3)
+
+exit 0

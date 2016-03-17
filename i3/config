@@ -194,7 +194,7 @@ bindsym $mod+Pause mode $mode_system
 bar {
   # status_command i3status
   output DVI-I-3
-  status_command $HOME/bin/conky-i3bar
+  status_command i3blocks -c $HOME/.config/i3blocks/config_right
   position bottom
   workspace_buttons yes
 
