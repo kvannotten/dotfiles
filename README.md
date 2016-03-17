@@ -1,6 +1,6 @@
 # Dotfiles
 
-I use https://github.com/thoughtbot/rcm to manage my dotfiles.
+I use GNU stow to manage my dotfiles
 
 # Neovim
 
