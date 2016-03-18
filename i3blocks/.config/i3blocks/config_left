@@ -1,3 +1,7 @@
+[dunst]
+command=$HOME/bin/i3_notify
+signal=12
+
 [memory]
 interval=10
 

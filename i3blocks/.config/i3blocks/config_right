@@ -19,7 +19,7 @@ separator=false
 
 [networkspeed]
 command=$HOME/bin/i3_networkspeed
-interval=5
+interval=persist
 color=#928474
 separator=true
 
