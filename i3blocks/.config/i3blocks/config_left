@@ -5,7 +5,7 @@ signal=12
 
 [updates]
 command=$HOME/bin/i3_updates
-interval=200
+interval=7200
 color=#928474
 signal=2
 urgent=true
