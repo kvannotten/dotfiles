@@ -34,7 +34,7 @@
 
     # Alignment of message text.
     # Possible values are "left", "center" and "right".
-    alignment = left
+    alignment = center
 
     # The frequency with which text that is longer than the notification
     # window allows bounces back and forth.
@@ -67,7 +67,7 @@
     # the top and down respectively.
     # The width can be negative.  In this case the actual width is the
     # screen width minus the width defined in within the geometry option.
-    geometry = "300x5-30+20"
+    geometry = "200x5-30+20"
 
     # Shrink window if it's smaller than the width.  Will be ignored if
     # width is 0.
@@ -155,8 +155,8 @@
     icon_folders = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
 
 [frame]
-    width = 3
-    color = "#aaaaaa"
+    width = 1
+    color = "#464B50"
 
 [shortcuts]
 
@@ -180,22 +180,19 @@
     context = ctrl+shift+period
 
 [urgency_low]
-    # IMPORTANT: colors have to be defined in quotation marks.
-    # Otherwise the "#" and following would be interpreted as a comment.
-    background = "#222222"
-    foreground = "#888888"
-    timeout = 10
+    background = "#323537"
+    foreground = "#8F9D6A"
+    timeout = 30
 
 [urgency_normal]
-    background = "#285577"
-    foreground = "#ffffff"
-    timeout = 10
+    background = "#323537"
+    foreground = "#AFC4DB"
+    timeout = 45
 
 [urgency_critical]
-    background = "#900000"
-    foreground = "#ffffff"
+    background = "#323537"
+    foreground = "#CF6A4C"
     timeout = 0
-
 
 # Every section that isn't one of the above is interpreted as a rules to
 # override settings for certain messages.
