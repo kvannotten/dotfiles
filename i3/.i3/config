@@ -268,7 +268,7 @@ for_window [class="MPlayer"] floating enable
 #########################
 
 # Lock screen
-set $Locker /home/kristof/bin/lock && sleep 1
+set $Locker sleep 0.2 && /home/kristof/bin/lock && sleep 0.5
 
 # Take screenshots
 bindsym $mod+Shift+p exec /home/kristof/bin/screenshot.sh
