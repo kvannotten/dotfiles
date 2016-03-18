@@ -326,9 +326,6 @@ exec --no-startup-id i3-msg '/home/kristof/bin/clipd -p /tmp/clipd.data'
 # start dunst notification server
 exec --no-startup-id dunst
 
-# start conky for drawing on desktop
-exec conky -c /home/kristof/.config/conky/conky_right_side
-
 # start redshift
 exec --no-startup-id redshift
 

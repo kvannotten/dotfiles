@@ -2,8 +2,14 @@
 command=$HOME/bin/i3_notify
 signal=12
 
-[memory]
-interval=10
+
+[updates]
+command=$HOME/bin/i3_updates
+interval=200
+color=#928474
+signal=2
+urgent=true
+
 
 [music_label]
 command=echo 
@@ -16,6 +22,7 @@ command=$HOME/bin/i3_music
 color=#928474
 interval=5
 separator=true
+
 
 [time_label]
 command=echo 

@@ -7,7 +7,7 @@
 
 iface="${BLOCK_INSTANCE:-$(ip route | awk '/^default/ {print $5; exit}')}"
 dt=3
-unit=Mb
+unit=KB
 printf_command='printf "%-5.1f/%5.1f %s/s\n", rx, wx, unit;'
 
 function check_proc_net_dev {
