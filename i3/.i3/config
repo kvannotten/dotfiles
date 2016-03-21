@@ -67,12 +67,16 @@ set $tag7 "7 "
 set $tag8 "8 factorio"
 set $tag9 "9 gimp"
 
+# add screens
+set $screen1 DVI-I-3
+set $screen2 DVI-I-2
+
 # assign workspaces to monitor
-workspace $tag1 output DVI-I-3
-workspace $tag2 output DVI-I-3
-workspace $tag3 output DVI-I-3
-workspace $tag4 output DVI-I-3
-workspace $tag5 output DVI-I-2
+workspace $tag1 output $screen1
+workspace $tag2 output $screen1
+workspace $tag3 output $screen1
+workspace $tag4 output $screen1
+workspace $tag5 output $screen2
 
 
 ##########################
@@ -193,7 +197,7 @@ bindsym $mod+Pause mode $mode_system
 # Start i3bar to display a workspace bar
 bar {
   # status_command i3status
-  output DVI-I-3
+  output $screen1
   status_command i3blocks -c $HOME/.config/i3blocks/config_right
   position bottom
   workspace_buttons yes
@@ -212,7 +216,7 @@ bar {
 }
 
 bar {
-  output DVI-I-2
+  output $screen2
   status_command i3blocks -c $HOME/.config/i3blocks/config_left
   position bottom
   workspace_buttons yes
