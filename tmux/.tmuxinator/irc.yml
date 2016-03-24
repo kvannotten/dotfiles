@@ -19,10 +19,6 @@ socket_path: /tmp/irc_tmux.sock
 # tmux_command: byobu
 
 windows:
-  - weechat:
-      layout: main-vertical
-      panes:
-        - weechat
   - profanity:
       layout: main-vertical
       panes:
