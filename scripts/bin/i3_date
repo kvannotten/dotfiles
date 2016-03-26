@@ -2,6 +2,7 @@
 
 I3_DATE=$(date '+%d %b %Y %H:%M:%S')
 
+echo -n "<span color='#689d6a'></span> "
 echo $I3_DATE
 echo $I3_DATE
 echo 

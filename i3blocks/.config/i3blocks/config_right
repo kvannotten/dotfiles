@@ -1,3 +1,5 @@
+markup=pango
+
 [networkip_label]
 command=echo 
 color=#689d6a
@@ -63,27 +65,15 @@ color=#928474
 separator=true
 
 
-[temperature_label]
-command=echo 
-color=#689d6a
-interval=once
-separator=false
-
 [temperature]
-command=echo "$($HOME/bin/i3_temperature 'Core 0') $($HOME/bin/i3_temperature 'Core 1') "
+command=echo "$($HOME/bin/i3_temperature 'Core 0')"
 interval=5
 color=#928474
 separator=true
-
-
-[time_label]
-command=echo 
-color=#689d6a
-interval=once
-separator=false
 
 [time]
 command=$HOME/bin/i3_date
 interval=1
 color=#928474
+markup=pango
 separator=true
