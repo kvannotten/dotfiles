@@ -24,14 +24,9 @@ interval=5
 separator=true
 
 
-[time_label]
-command=echo 
-color=#689d6a
-interval=once
-separator=false
-
 [time]
 command=$HOME/bin/i3_date
 color=#928474
 interval=1
+markup=pango
 separator=true
