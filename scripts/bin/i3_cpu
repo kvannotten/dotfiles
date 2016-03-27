@@ -47,6 +47,7 @@ $cpu_usage eq -1 and die 'Can\'t find CPU information';
 #$cpu_temp = `sensors | grep Core\ 0 | cut -d: -f2 | cut -dC -f1`
 
 # Print short_text, full_text
+print "<span color=\"#689d6a\">CPU </span>";
 printf "%.${decimals}f%%\n", $cpu_usage;
 printf "%.${decimals}f%%\n", $cpu_usage;
 

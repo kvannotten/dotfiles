@@ -1,5 +1,6 @@
 #!/bin/sh
 # Copyright (C) 2014 Julien Bonjean <julien@bonjean.info>
+# Adapted by Kristof Vannotten (2016)
 
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -20,7 +21,7 @@ ALERT_LOW="${1:-10}" # color will turn red under this value (default: 10%)
 df -h -P -l "$DIR" | awk -v alert_low=$ALERT_LOW '
 /\/.*/ {
 	# full text
-	print $3 "/" $2
+	printf "<span color=\"#689d6a\"></span> %-3s/%-3s\n", $3, $2
 	# short text
 	print $4
 	use=$5
@@ -30,8 +31,8 @@ df -h -P -l "$DIR" | awk -v alert_low=$ALERT_LOW '
 END {
 	gsub(/%$/,"",use)
 	if (100 - use < alert_low) {
-		# color
-		print "#FF0000"
+		# make urgent
+    exit 33
 	}
 }
 '

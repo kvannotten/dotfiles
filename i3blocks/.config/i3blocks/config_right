@@ -1,23 +1,10 @@
 markup=pango
 
-[networkip_label]
-command=echo 
-color=#689d6a
-interval=once
-separator=false
-
 [networkip]
 command=$HOME/bin/i3_networkip
 interval=30
 color=#928474
 separator=true
-
-
-[networkspeed_label]
-command=echo 
-color=#689d6a
-interval=once
-separator=false
 
 [networkspeed]
 command=$HOME/bin/i3_networkspeed
@@ -25,25 +12,11 @@ interval=persist
 color=#928474
 separator=true
 
-
-[disk_label]
-command=echo 
-color=#689d6a
-interval=once
-separator=false
-
 [disk]
 command=$HOME/bin/i3_disk
 interval=30
 color=#928474
 separator=true
-
-
-[memory_label]
-command=echo "RAM"
-color=#689d6a
-interval=once
-separator=false
 
 [memory]
 command=$HOME/bin/i3_memory
@@ -51,19 +24,11 @@ interval=30
 color=#928474
 separator=true
 
-
-[cpu_label]
-command=echo "CPU"
-color=#689d6a
-interval=once
-separator=false
-
 [cpu]
 command=$HOME/bin/i3_cpu
 interval=1
 color=#928474
 separator=true
-
 
 [temperature]
 command=echo "$($HOME/bin/i3_temperature 'Core 0')"
