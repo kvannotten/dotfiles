@@ -24,7 +24,7 @@ call plug#begin('~/.config/nvim/plugged')
 " >> Functionality
   Plug 'ctrlpvim/ctrlp.vim'                               " file searcher
   Plug 'ervandew/supertab'                                " tab completion
-  Plug 'xolox/vim-misc' | Plug 'xolox/vim-easytags'       " ctags support
+  "Plug 'xolox/vim-misc' | Plug 'xolox/vim-easytags'       " ctags support
   Plug 'majutsushi/tagbar'                                " tagbar
   Plug 'othree/eregex.vim'                                " allows perl regex
   "Plug 'scrooloose/syntastic'                             " syntax checking
