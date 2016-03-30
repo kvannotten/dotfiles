@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+curl -s https://xkcd.com/info.0.json | jq '.img' | xargs curl -s > /tmp/tmp_wall.png && convert /home/kristof/.wallpaper.png /tmp/tmp_wall.png -gravity SouthWest -geometry +10+100 -composite -matte /tmp/out.png && feh --bg-scale '/tmp/out.png'
