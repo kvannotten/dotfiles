@@ -1,3 +1,21 @@
 #!/usr/bin/env bash
 
-curl -s https://xkcd.com/info.0.json | jq '.img' | xargs curl -s > /tmp/tmp_wall.png && convert /home/kristof/.wallpaper.png /tmp/tmp_wall.png -gravity SouthWest -geometry +10+100 -composite -matte /tmp/out.png && feh --bg-scale '/tmp/out.png'
+####################################
+# dependencies:
+#  * jq:           for json parsing
+#  * imagemagick:  for image parsing
+#  * feh:          for setting the bg
+#
+
+XKCD_COMIC=/tmp/tmp_wall.png
+CURRENT_WALLPAPER=/home/kristof/.wallpaper.png
+NEW_WALLPAPER=/tmp/out_wall.png
+
+# fetch the latest xkcd comic and write in to /tmp
+curl -s https://xkcd.com/info.0.json | jq '.img' | xargs curl -s > $XKCD_COMIC
+
+# add it to current wallpaper
+convert $CURRENT_WALLPAPER $XKCD_COMIC -gravity SouthWest -geometry +10+100 -composite -matte $NEW_WALLPAPER
+
+# set the wallpaper
+feh --bg-scale $NEW_WALLPAPER
