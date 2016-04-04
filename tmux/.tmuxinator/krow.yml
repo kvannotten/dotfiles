@@ -18,7 +18,7 @@ root: ~/krow/krow2-website
 # Change the command to call tmux.  This can be used by derivatives/wrappers like byobu.
 # tmux_command: byobu
 
-pre: ruby -r redis -e "Redis.new.flushall"
+pre: ruby -r redis -e "Redis.new.flushall rescue Redis::CannotConnectError"
 
 windows:
   - editor:
