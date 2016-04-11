@@ -1,6 +1,6 @@
 # ~/.tmuxinator/krow.yml
 
-name: krow
+name: bwh
 root: ~/krow/krow2-website
 
 # Optional tmux socket

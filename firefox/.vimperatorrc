@@ -53,4 +53,10 @@ set! devtools.styleeditor.enabled=false
 " source config
 noremap <Leader>r :source ~/.vimperatorrc<CR>
 
+" map paste operation normally
+imap <C-v> <C-v>
+
+" set editor
+set editor="/usr/bin/termite -e /usr/bin/nvim"
+
 " vim: set ft=vimperator:
