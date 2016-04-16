@@ -54,7 +54,7 @@ set! devtools.styleeditor.enabled=false
 noremap <Leader>r :source ~/.vimperatorrc<CR>
 
 " open startpage
-noremap <Leader>s :tabopen file:///home/kristof/dev/Startpage/startpage.html<CR>
+noremap <Leader>s :open file:///home/kristof/dev/Startpage/startpage.html<CR>
 
 " map paste operation normally
 imap <C-v> <C-v>
