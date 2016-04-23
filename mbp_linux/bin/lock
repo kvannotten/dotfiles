@@ -1,0 +1,34 @@
+#!/bin/env sh
+
+# Dependencies:
+# imagemagick
+# i3lock-color-git
+# maim
+
+IMAGE1=/tmp/i3lock_0.png
+IMAGE2=/tmp/i3lock_1.png
+FINAL=/tmp/i3lock.png
+LOCK=$HOME/img/lock.png
+PIPE=/tmp/lock_pipe
+
+# Create temporary fifo pipe
+mkfifo $PIPE
+
+maim --geometry=2880x1800+0+0 $IMAGE1 && echo "1" > $PIPE &
+maim --geometry=3840x2160+2880+0 $IMAGE2
+
+# blocking call to empty pipe
+cat $PIPE > /dev/null
+
+convert $IMAGE1 -scale 10% -scale 1000% -font Hack  -pointsize 26 -fill white -gravity center -annotate +0+400 'Type password to unlock' - | composite -gravity center $LOCK - $IMAGE1 && echo "2" > $PIPE &
+convert $IMAGE2 -scale 10% -scale 1000% -font Hack  -pointsize 26 -fill white -gravity center -annotate +0+400 'Type password to unlock' - | composite -gravity center $LOCK - $IMAGE2
+
+# blocking call to empty pipe
+cat $PIPE > /dev/null
+
+# merge images
+convert +append $IMAGE1 $IMAGE2 $FINAL
+
+i3lock --textcolor=ffffff00 --insidecolor=ffffff1c --ringcolor=ffffff3e --linecolor=ffffff00 --keyhlcolor=00000080 --ringvercolor=00000000 --insidevercolor=0000001c --ringwrongcolor=00000055 --insidewrongcolor=0000001c  -i $FINAL
+
+rm $IMAGE1 $IMAGE2 $FINAL $PIPE

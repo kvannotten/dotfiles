@@ -7,7 +7,7 @@ export LANG=en_US.UTF-8
 # xcape -e 'Control_L=Escape'
 
 # faster key repeat rate
-xset r rate 160 50
+xset r rate 160 20
 
 # faster mouse movement
 xset m 3/1 4

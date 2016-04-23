@@ -1,5 +1,5 @@
 [global]
-    font = Hack 8
+    font = Hack 16
 
     # Allow a small subset of html markup in notifications and formats:
     #   <b>bold</b>

@@ -47,3 +47,15 @@ interval=1
 color=#928474
 markup=pango
 separator=true
+
+
+[battery]
+command=$HOME/bin/i3_battery
+markup=pango
+interval=30
+color=#928474
+
+[volume]
+command=$HOME/bin/i3_volume
+interval=10
+color=#928474

@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+
+echo $(ifconfig wlp3s0 | grep 'inet ' | tr -s ' ' | cut -d ' ' -f 3)
+
+exit 0
