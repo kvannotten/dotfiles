@@ -15,7 +15,7 @@ NEW_WALLPAPER=/tmp/out_wall.png
 curl -s https://xkcd.com/info.0.json | jq '.img' | xargs curl -s > $XKCD_COMIC
 
 # add it to current wallpaper
-convert $CURRENT_WALLPAPER $XKCD_COMIC -gravity SouthWest -geometry +10+100 -composite -matte $NEW_WALLPAPER
+convert $CURRENT_WALLPAPER $XKCD_COMIC -gravity SouthWest -geometry +30+100 -composite -matte $NEW_WALLPAPER
 
 # set the wallpaper
 feh --bg-scale $NEW_WALLPAPER

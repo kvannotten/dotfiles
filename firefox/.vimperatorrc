@@ -1,0 +1,65 @@
+"3.12.0 (created: 2016/02/28 22:07:56)
+
+source! /home/kristof/.vimperatorrc.local
+
+" set mapleader
+let mapleader=','
+
+" search
+set ignorecase
+set smartcase
+
+" autocomplete
+set complete=lt
+
+" tab operation
+noremap <Leader>h gT
+noremap <Leader>l gt
+
+" movement remappings
+nnoremap j 3j
+nnoremap k 3k
+nnoremap h 3h
+nnoremap l 3l
+
+" also use x to close tab
+nnoremap x :tabclose<CR>
+
+" no warnings
+set! browser.tabs.warnOnClose=false
+set! browser.tabs.warnOnCloseOtherTabs=false
+set! browser.tabs.warnOnOpen=false
+set! general.warnOnAboutConfig=false
+
+" open tabs to the right of the current
+set! browser.tabs.insertRelatedAfterCurrent=true
+set! browser.tabs.insertRelatedAfterCurrent.override=true
+
+" view that source
+set! view_source.syntax_highlight=true
+set! view_source.wrap_long_lines=true
+
+" dark devtools
+set! devtools.theme="dark"
+
+" disable cache with devtools open
+set! devtools.cache.disabled=true
+
+" remove stuff from devtools that I don't use
+set! devtools.performance.enabled=false
+set! devtools.scratchpad.enabled=false
+set! devtools.styleeditor.enabled=false
+
+" source config
+noremap <Leader>r :source ~/.vimperatorrc<CR>
+
+" open startpage
+noremap <Leader>s :open file:///home/kristof/dev/Startpage/startpage.html<CR>
+
+" map paste operation normally
+imap <C-v> <C-v>
+
+" set editor
+set editor="/usr/bin/termite -e /usr/bin/nvim"
+
+" vim: set ft=vimperator:

@@ -1,0 +1,26 @@
+snippet "^#!" "#!/usr/bin/env ruby" r
+#!/usr/bin/env ruby
+$0
+endsnippet
+
+snippet re "Require" b
+require '${1:gem}'
+endsnippet
+
+snippet cl "Create a class" b
+class ${1:SomeClass}
+	$0
+end
+endsnippet
+
+snippet todo "Create a todo" b
+# TODO: ${1:desc} (`whoami`) (`date +%c`)
+endsnippet
+
+snippet begin "Start begin rescue block" b
+begin
+	$1
+rescue ${2:StandardError => e}
+	$3
+end$0
+endsnippet

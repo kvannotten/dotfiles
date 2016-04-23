@@ -1,7 +1,7 @@
-# ~/.tmuxinator/krow.yml
+# ~/.tmuxinator/bingo.yml
 
-name: krow
-root: ~/krow/krow2-website
+name: krow_example
+root: ~/krow/krow2_example_app
 
 # Optional tmux socket
 # socket_name: foo
@@ -18,28 +18,10 @@ root: ~/krow/krow2-website
 # Change the command to call tmux.  This can be used by derivatives/wrappers like byobu.
 # tmux_command: byobu
 
-pre: ruby -r redis -e "Redis.new.flushall"
-
 windows:
   - editor:
-      layout: main-vertical
+      layout: ab39,191x54,0,0{127x54,0,0,0,63x54,128,0[63x27,128,0,1,63x26,128,28,2]}
       panes:
           - nvim
-  - data:
-      layout: tiled
-      panes:
-        - bundle exec rails db
-        - bundle exec rails c
-        - 
-  - server:
-      layout: main-vertical
-      panes:
-        - bundle exec rails s
-  - sidekiq:
-      layout: main-vertical
-      panes:
-        - bundle exec sidekiq
-  - guard:
-      layout: main-vertical
-      panes:
-        - bundle exec guard
+          - npm start
+          - 

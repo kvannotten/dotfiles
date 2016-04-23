@@ -24,12 +24,13 @@ call plug#begin('~/.config/nvim/plugged')
 " >> Functionality
   Plug 'ctrlpvim/ctrlp.vim'                               " file searcher
   Plug 'ervandew/supertab'                                " tab completion
-  "Plug 'xolox/vim-misc' | Plug 'xolox/vim-easytags'       " ctags support
+  Plug 'xolox/vim-misc' | Plug 'xolox/vim-easytags'       " ctags support
   Plug 'majutsushi/tagbar'                                " tagbar
   Plug 'othree/eregex.vim'                                " allows perl regex
   "Plug 'scrooloose/syntastic'                             " syntax checking
   Plug 'simnalamburt/vim-mundo'                           " visualize undo tree
   Plug 'chaoren/vim-wordmotion'                           " camelcase motions
+  Plug 'SirVer/ultisnips'                                 " snippets
 
 " >> Misc
   Plug 'Shougo/echodoc.vim'                               " show method prototype in echo window
@@ -54,7 +55,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'mattn/emmet-vim/'                                 " html shortcuts
   Plug 'jelera/vim-javascript-syntax'                     " js syntax stuff
   Plug 'pangloss/vim-javascript'                          " more js stuff + css
-  Plug 'ternjs/tern_for_vim'                              " javascript syntax checking
+  Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }     " javascript syntax checking
   Plug 'mxw/vim-jsx'                                      " jsx syntax checking
   Plug 'carlitux/deoplete-ternjs'                         " deoplete ternjs
 
@@ -421,6 +422,8 @@ map <leader>nf :NERDTreeFind<cr>
 " => Deoplete
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:deoplete#enable_at_startup = 1
+"let g:deoplete#disable_auto_complete = 1
+"inoremap <silent><expr><C-Space> deoplete#mappings#manual_complete()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Echodoc
@@ -611,6 +614,18 @@ let g:easytags_languages = {
 \}
 "}}}
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => ultisnips
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"{{{
+inoremap <silent><expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
+"}}}
 "==============================================================
 " HELPER FUNCTIONS
 "==============================================================
