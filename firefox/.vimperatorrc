@@ -25,6 +25,9 @@ nnoremap l 3l
 " also use x to close tab
 nnoremap x :tabclose<CR>
 
+" open tab
+nnoremap <Leader>t :tabopen<CR>
+
 " no warnings
 set! browser.tabs.warnOnClose=false
 set! browser.tabs.warnOnCloseOtherTabs=false
