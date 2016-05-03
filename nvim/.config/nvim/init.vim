@@ -267,6 +267,9 @@ map <leader>ba :1,1000 bd!<cr>
 " map <leader>tm :tabmove
 " map <leader>t<leader> :tabnext
 
+" Keep the cursor where it was when yanking something
+vnoremap <expr>y "my\"" . v:register . "y`y"
+
 " Opens a new tab with the current buffer's path
 " Super useful when editing files in the same directory
 " map <leader>te :tabedit <c-r>=expand("%:p:h")<cr>/
