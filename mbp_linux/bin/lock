@@ -17,7 +17,7 @@ mkfifo $PIPE
 
 maim --geometry=1920x1080+0+0 $IMAGE1 && echo "1" > $PIPE &
 maim --geometry=1920x1080+1920+0 $IMAGE2
-maim --geometry=1920x1080+3840+0 $IMAGE3
+maim --geometry=1920x1080+4800+0 $IMAGE3
 
 # blocking call to empty pipe
 cat $PIPE > /dev/null
