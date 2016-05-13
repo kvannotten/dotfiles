@@ -295,7 +295,7 @@ bindsym $mod+Shift+s sticky toggle
 bindsym $mod+q exec i3-input -F 'rename workspace to "%s"' -P 'New name: '
 
 # use rofi for app launching
-bindsym $mod+d exec rofi -modi "run" -show run
+bindsym $mod+d exec rofi -show run
 bindsym $mod+shift+d exec --no-startup-id i3-dmenu-desktop --dmenu='rofi -dmenu'
 bindsym $mod+ctrl+space exec tail -n10 -z /tmp/clipd.data | tac --separator=\0 | rofi -dmenu -sep '\0' | xclip -selection clipboard
 
