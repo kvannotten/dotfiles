@@ -8,7 +8,7 @@
 iface="${BLOCK_INSTANCE:-$(ip route | awk '/^default/ {print $5; exit}')}"
 dt=3
 unit=KB
-printf_command='printf "<span color=\"#689d6a\"></span> %-5.1f/%5.1f %s/s\n", rx, wx, unit;'
+printf_command='printf "<span color=\"#689d6a\"></span> %-5.1f<span color=\"#689d6a\"></span>%5.1f %s/s\n", rx, wx, unit;'
 
 function check_proc_net_dev {
     if [ ! -f "/proc/net/dev" ]; then
