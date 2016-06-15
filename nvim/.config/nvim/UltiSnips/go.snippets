@@ -1,0 +1,16 @@
+snippet /^import/ "Import declaration" r
+	import (
+		"${1:package}"
+	)
+endsnippet
+
+snippet /^package/ "Package declaration" r
+	package ${1:main}
+endsnippet
+
+snippet /^iferr/ "Check if err is not nil" r
+if err != nil {
+	log.Error(err.Error())
+	${1:return}
+}
+endsnippet

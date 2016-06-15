@@ -49,6 +49,7 @@ call plug#begin('~/.config/nvim/plugged')
 " ================
   Plug 'fatih/vim-go', { 'for': ['golang', 'go'] }        " go integration
   Plug 'zchee/deoplete-go', { 'do': 'make'}               " deoplete for go
+  Plug 'nsf/gocode', { 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
 
 " HTML plugins
 " ==============
