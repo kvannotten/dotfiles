@@ -9,6 +9,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'vim-airline/vim-airline'                                    " status bar
   Plug 'vim-airline/vim-airline-themes'                             " themes for airline
   Plug 'airblade/vim-gitgutter'                                     " add git info in gutter
+  Plug 'ryanoasis/vim-devicons'                                     " add little icons in nerdtree
 
 " >> Code enhancement
   Plug 'benekastah/neomake'                               " auto complete
@@ -53,12 +54,12 @@ call plug#begin('~/.config/nvim/plugged')
 
 " HTML plugins
 " ==============
-  Plug 'mattn/emmet-vim/'                                 " html shortcuts
-  Plug 'jelera/vim-javascript-syntax'                     " js syntax stuff
-  Plug 'pangloss/vim-javascript'                          " more js stuff + css
-  Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }     " javascript syntax checking
-  Plug 'mxw/vim-jsx'                                      " jsx syntax checking
-  Plug 'carlitux/deoplete-ternjs'                         " deoplete ternjs
+  Plug 'mattn/emmet-vim/'                                                  " html shortcuts
+  Plug 'jelera/vim-javascript-syntax', { 'for': ['js', 'jsx'] }            " js syntax stuff
+  Plug 'pangloss/vim-javascript', { 'for': ['js', 'jsx'] }                 " more js stuff + css
+  Plug 'ternjs/tern_for_vim', { 'do': 'npm install', 'for': ['js', 'jsx']} " javascript syntax checking
+  Plug 'mxw/vim-jsx'                                                       " jsx syntax checking
+  Plug 'carlitux/deoplete-ternjs', { 'for': ['js', 'jsx'] }                " deoplete ternjs
 
 " Elm plugins
 " ============
