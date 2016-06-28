@@ -12,8 +12,8 @@ color=#928474
 separator=true
 
 [networkspeed]
-command=$HOME/bin/i3_networkspeed
-interval=persist
+command=$HOME/bin/i3blocks-net-speed
+interval=2
 color=#928474
 separator=true
 

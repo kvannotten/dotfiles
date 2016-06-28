@@ -23,15 +23,15 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'godlygeek/tabular'                                " tabularize stuff
 
 " >> Functionality
-  Plug 'ctrlpvim/ctrlp.vim'                               " file searcher
-  Plug 'ervandew/supertab'                                " tab completion
-  Plug 'xolox/vim-misc' | Plug 'xolox/vim-easytags'       " ctags support
-  Plug 'majutsushi/tagbar'                                " tagbar
-  Plug 'othree/eregex.vim'                                " allows perl regex
-  "Plug 'scrooloose/syntastic'                             " syntax checking
-  Plug 'simnalamburt/vim-mundo'                           " visualize undo tree
-  Plug 'chaoren/vim-wordmotion'                           " camelcase motions
-  Plug 'SirVer/ultisnips'                                 " snippets
+  Plug 'ctrlpvim/ctrlp.vim'                                             " file searcher
+  Plug 'ervandew/supertab'                                              " tab completion
+  Plug 'xolox/vim-misc' | Plug 'xolox/vim-easytags'                     " ctags support
+  Plug 'majutsushi/tagbar'                                              " tagbar
+  Plug 'othree/eregex.vim'                                              " allows perl regex
+  Plug 'simnalamburt/vim-mundo'                                         " visualize undo tree
+  Plug 'chaoren/vim-wordmotion'                                         " camelcase motions
+  Plug 'SirVer/ultisnips'                                               " snippets
+  Plug 'Shougo/vimproc.vim', { 'do': 'make' } | Plug 'Shougo/unite.vim' " unite actions
 
 " >> Misc
   Plug 'Shougo/echodoc.vim'                               " show method prototype in echo window
@@ -519,12 +519,6 @@ let g:neomake_javascript_enabled_makers = ['jshint']
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <F6> :MundoToggle<cr>
 
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => vim word motion
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => tagbar
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -631,6 +625,19 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
 "}}}
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => unite
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"{{{
+call unite#filters#matcher_default#use(['matcher_fuzzy'])
+let g:unite_source_grep_command = 'ag'
+let g:unite_source_grep_default_opts =
+              \ '-i --vimgrep --hidden --ignore ' .
+              \ '''.hg'' --ignore ''.svn'' --ignore ''.git'' --ignore ''.bzr'''
+nnoremap <leader>a :Unite grep:.<cr>
+"}}}
+
 "==============================================================
 " HELPER FUNCTIONS
 "==============================================================
