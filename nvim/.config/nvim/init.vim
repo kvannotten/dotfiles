@@ -42,9 +42,9 @@ call plug#begin('~/.config/nvim/plugged')
 
 " Ruby Plugins
 " ==============
-  Plug 'osyo-manga/vim-monster', { 'for': ['rb', 'erb'] } " ruby code completion
-  Plug 'KurtPreston/vim-autoformat-rails'                 " rails formatting
-  Plug 'tpope/vim-rails'                                  " rails plugin
+  Plug 'osyo-manga/vim-monster', { 'for': ['rb', 'erb', 'ruby'] } " ruby code completion
+  Plug 'KurtPreston/vim-autoformat-rails'                         " rails formatting
+  Plug 'tpope/vim-rails'                                          " rails plugin
 
 " Golang Plugins
 " ================
@@ -412,7 +412,6 @@ let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --hidden
       \ -g ""'
 " }}}
 
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Nerd Tree
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -422,26 +421,31 @@ map <leader>nb :NERDTreeFromBookmark
 map <leader>nf :NERDTreeFind<cr>
 " }}}
 
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Deoplete
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"{{{
 let g:deoplete#enable_at_startup = 1
 "let g:deoplete#disable_auto_complete = 1
 "inoremap <silent><expr><C-Space> deoplete#mappings#manual_complete()
+
+" vim-monster
+let g:monster#completion#rcodetools#backend = "async_rct_complete"
+let g:deoplete#sources#omni#input_patterns = {
+\   "ruby" : '[^. *\t]\.\w*\|\h\w*::',
+\}
+"}}}
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Echodoc
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:echodoc_enable_at_startup = 1
 
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => EasyAlign
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 vmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => vim-multiple-cursors
@@ -451,7 +455,6 @@ let g:multi_cursor_use_default_mapping=0
 let g:multi_cursor_next_key='<C-z>'
 let g:multi_cursor_quit_key='<Esc>'
 " }}}
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => vim-airline config (force color)
@@ -463,19 +466,16 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 let g:airline_powerline_fonts = 1
 " }}}
 
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => supertab
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:SuperTabClosePreviewOnPopupClose = 1
 let g:SuperTabDefaultCompletionType = "context"
 
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => vim-json
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:vim_json_syntax_conceal = 0
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => vim-go
@@ -491,7 +491,6 @@ let g:go_fmt_command = "goimports"
 let g:go_fmt_fail_silently = 0
 let g:go_fmt_autosave = 1
 " }}}
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => syntastic/neomake
@@ -553,7 +552,6 @@ let g:tagbar_type_go = {
     \ }
 " }}}
 
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => rainbow
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -586,7 +584,6 @@ let g:rainbow_conf = {
 \}
 " }}}
 
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => deoplete-clang
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -596,7 +593,6 @@ let g:deoplete#sources#clang#clang_header  = '/usr/include/clang'
 let g:deoplete#sources#clang#std#c         = 'c11'
 let g:deoplete#sources#clang#sort_algo = 'priority'
 "}}}
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => easytags

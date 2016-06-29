@@ -45,3 +45,5 @@ let g:elm_detailed_complete = 1
 set tags=./tags
 let g:easytags_dynamic_files = 1
 
+" dont use ex mode, use for formatting instead
+noremap Q gq
