@@ -9,11 +9,10 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'vim-airline/vim-airline'                                    " status bar
   Plug 'vim-airline/vim-airline-themes'                             " themes for airline
   Plug 'airblade/vim-gitgutter'                                     " add git info in gutter
-  Plug 'ryanoasis/vim-devicons'                                     " add little icons in nerdtree
 
 " >> Code enhancement
   Plug 'benekastah/neomake'                               " auto complete
-  Plug 'Shougo/deoplete.nvim'                             " auto complete
+  Plug 'Shougo/deoplete.nvim', { 'frozen': 1 }         " auto complete
   Plug 'tpope/vim-surround'                               " enable stuff as yss'
   Plug 'Townk/vim-autoclose'                              " automatically complete ( { ...
   Plug 'terryma/vim-multiple-cursors'                     " multiple cursors
@@ -39,6 +38,7 @@ call plug#begin('~/.config/nvim/plugged')
 
 " >> Colors
   Plug 'morhetz/gruvbox'                                  " gruvbox colors
+  Plug 'tiagofumo/vim-nerdtree-syntax-highlight'          " colors for nerdtree
 
 " Ruby Plugins
 " ==============
@@ -70,6 +70,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'elzr/vim-json', { 'for': ['json'] }               " json syntax
   Plug 'suan/vim-instant-markdown'                        " markdown preview
   Plug 'zchee/deoplete-clang', { 'for': ['c', 'h'] }      " c complete
+  Plug 'ryanoasis/vim-devicons'                           " add little icons in nerdtree
 
 "}}}
 call plug#end()
@@ -399,6 +400,7 @@ let g:ctrlp_working_path_mode = 0
 
 let g:ctrlp_map = '<c-f>'
 map <C-b> :CtrlPBuffer<cr>
+" let g:ctrlp_cmd = 'CtrlPMRU'
 
 let g:ctrlp_max_height = 20
 let g:ctrlp_custom_ignore = 'node_modules\|^\.DS_Store\|^\.git\|^\.coffee'
@@ -410,15 +412,20 @@ let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --hidden
       \ --ignore .DS_Store
       \ --ignore "**/*.pyc"
       \ -g ""'
+
+let g:webdevicons_enable_ctrlp = 1
 " }}}
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Nerd Tree
+" => Nerd Tree && Devicons
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " {{{
 map <leader>nn :NERDTreeToggle<cr>
 map <leader>nb :NERDTreeFromBookmark
 map <leader>nf :NERDTreeFind<cr>
+
+let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+let g:DevIconsEnableFoldersOpenClose = 1
 " }}}
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -632,6 +639,7 @@ let g:unite_source_grep_default_opts =
               \ '-i --vimgrep --hidden --ignore ' .
               \ '''.hg'' --ignore ''.svn'' --ignore ''.git'' --ignore ''.bzr'''
 nnoremap <leader>a :Unite grep:.<cr>
+nnoremap <leader>f :Unite file_rec<cr>
 "}}}
 
 "==============================================================
