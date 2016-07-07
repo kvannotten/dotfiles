@@ -273,7 +273,7 @@ for_window [class=$floating_windows] floating enable
 #########################
 
 # Lock screen
-set $Locker sleep 0.2 && /home/kristof/bin/lock && sleep 0.5
+set $Locker sleep 0.2 && /usr/bin/slock && sleep 0.5
 
 # Take screenshots
 bindsym $mod+Shift+p exec /home/kristof/bin/screenshot.sh
