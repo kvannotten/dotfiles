@@ -9,6 +9,7 @@ set $mod Mod1
 floating_modifier $mod
 
 # start a terminal
+set $term /usr/bin/termite
 bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Shift+Return exec termite --directory=`xcwd`
 
@@ -263,9 +264,9 @@ for_window [class="^Hexchat$"] border none
 for_window [class="^Thunderbird$"] border none
 #for_window [class="^Termite$"] border 5pixel
 
-# Floating for some apps
-for_window [class="MPlayer"] floating enable
-
+# Floating windows
+set $floating_windows "^(Yad|Xfce4-appfinder|Simplescreenrecorder|smplayer|Blink|MPlayer|mpv)$"
+for_window [class=$floating_windows] floating enable
 
 ##########################
 # CUSTOM BINDINGS
@@ -317,9 +318,11 @@ exec_always feh --bg-scale '/home/kristof/.wallpaper.png'
 # compton
 exec_always --no-startup-id compton -CGf -D 2
 
+exec_always 'mkdir -p ~/.cache/mutt/messages'
+
 # Restore layout
 exec --no-startup-id i3-msg 'workspace $tag1; append_layout /home/kristof/.i3/workspace-1.json'
-exec --no-startup-id i3-msg 'workspace $tag1; exec termite --name gen'
+exec --no-startup-id i3-msg 'workspace $tag1; exec $term --name gen'
 
 exec --no-startup-id i3-msg 'workspace $tag2; append_layout /home/kristof/.i3/workspace-2.json'
 exec --no-startup-id i3-msg 'workspace $tag2; exec /usr/bin/firefox'

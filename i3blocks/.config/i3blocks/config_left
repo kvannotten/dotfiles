@@ -2,14 +2,12 @@
 command=$HOME/bin/i3_notify
 signal=12
 
-
 [updates]
 command=$HOME/bin/i3_updates
 interval=7200
 color=#928474
 signal=2
 urgent=true
-
 
 [music_label]
 command=echo 
@@ -23,6 +21,13 @@ color=#928474
 interval=5
 separator=true
 
+[weather]
+command=$HOME/bin/i3_weather
+color=#928474
+interval=once
+markup=pango
+separator=true
+signal=2
 
 [time]
 command=$HOME/bin/i3_date

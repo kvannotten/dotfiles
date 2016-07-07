@@ -64,3 +64,5 @@ export LANG=en_US.UTF-8
 export NVIM_TUI_ENABLE_TRUE_COLOR=1
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export TERMINAL=/home/kristof/bin/st
