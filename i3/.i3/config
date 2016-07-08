@@ -318,7 +318,8 @@ exec_always feh --bg-scale '/home/kristof/.wallpaper.png'
 # compton
 exec_always --no-startup-id compton -CGf -D 2
 
-exec_always 'mkdir -p ~/.cache/mutt/messages'
+# Start mail notification daemon
+exec --no-startup-id i3-msg 'exec $HOME/bin/i3_mail'
 
 # Restore layout
 exec --no-startup-id i3-msg 'workspace $tag1; append_layout /home/kristof/.i3/workspace-1.json'
