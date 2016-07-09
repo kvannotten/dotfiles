@@ -5,6 +5,6 @@
   new=$(echo $l | awk '{print $1-$3}')
   address=$(echo $l | awk '{print $6}')
   if [ $new != 0 ]; then
-    /usr/bin/notify-send "New Mail" "$address has $new new mail(s)."
+    /usr/bin/notify-send "$address" "$new new mail(s)"
   fi
 done

@@ -1,0 +1,10 @@
+#!/usr/bin/env sh
+
+/home/kristof/go/bin/mail 2>/dev/null | while read line; do
+  l=$(echo $line | sed 's/://')
+  new=$(echo $l | awk '{print $2}')
+  address=$(echo $l | awk '{print $1}')
+  if [ $new != 0 ]; then
+    /usr/bin/notify-send "$address" "$new new mail(s)"
+  fi
+done
