@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-/home/kristof/go/bin/mail 2>/dev/null | while read line; do
+/home/kristof/go/bin/kmail 2>/dev/null | while read line; do
   l=$(echo $line | sed 's/://')
   new=$(echo $l | awk '{print $2}')
   address=$(echo $l | awk '{print $1}')

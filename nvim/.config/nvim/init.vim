@@ -11,15 +11,15 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'airblade/vim-gitgutter'                                     " add git info in gutter
 
 " >> Code enhancement
-  Plug 'benekastah/neomake'                               " auto complete
-  Plug 'Shougo/deoplete.nvim', { 'frozen': 1 }         " auto complete
-  Plug 'tpope/vim-surround'                               " enable stuff as yss'
-  Plug 'Townk/vim-autoclose'                              " automatically complete ( { ...
-  Plug 'terryma/vim-multiple-cursors'                     " multiple cursors
-  Plug 'justinmk/vim-sneak'                               " missing motion for vim (s)
-  Plug 'tpope/vim-endwise'                                " end structures like if, def, ...
-  Plug 'junegunn/vim-easy-align'                          " align code on chars
-  Plug 'godlygeek/tabular'                                " tabularize stuff
+  Plug 'benekastah/neomake'                    " auto complete
+  Plug 'Shougo/deoplete.nvim', { 'frozen': 1 } " auto complete
+  Plug 'tpope/vim-surround'                    " enable stuff as yss'
+  Plug 'Townk/vim-autoclose'                   " automatically complete ( { ...
+  Plug 'terryma/vim-multiple-cursors'          " multiple cursors
+  Plug 'justinmk/vim-sneak'                    " missing motion for vim (s)
+  Plug 'tpope/vim-endwise'                     " end structures like if, def, ...
+  Plug 'junegunn/vim-easy-align'               " align code on chars
+  Plug 'godlygeek/tabular'                     " tabularize stuff
 
 " >> Functionality
   Plug 'ctrlpvim/ctrlp.vim'                                             " file searcher
@@ -67,10 +67,11 @@ call plug#begin('~/.config/nvim/plugged')
 
 " Other plugins
 " ==============
-  Plug 'elzr/vim-json', { 'for': ['json'] }               " json syntax
-  Plug 'suan/vim-instant-markdown'                        " markdown preview
-  Plug 'zchee/deoplete-clang', { 'for': ['c', 'h'] }      " c complete
-  Plug 'ryanoasis/vim-devicons'                           " add little icons in nerdtree
+  Plug 'elzr/vim-json', { 'for': ['json'] }                      " json syntax
+  Plug 'suan/vim-instant-markdown'                               " markdown preview
+  Plug 'zchee/deoplete-clang', { 'for': ['c', 'h'] }             " c complete
+  Plug 'Shougo/neoinclude.vim', { 'for': ['c', 'h'] } " header completion
+  Plug 'ryanoasis/vim-devicons'                                  " add little icons in nerdtree
 
 "}}}
 call plug#end()
@@ -596,8 +597,7 @@ let g:rainbow_conf = {
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "{{{
 let g:deoplete#sources#clang#libclang_path = '/usr/lib/libclang.so'
-let g:deoplete#sources#clang#clang_header  = '/usr/include/clang'
-let g:deoplete#sources#clang#std#c         = 'c11'
+let g:deoplete#sources#clang#clang_header  = '/usr/lib/clang'
 let g:deoplete#sources#clang#sort_algo = 'priority'
 "}}}
 
