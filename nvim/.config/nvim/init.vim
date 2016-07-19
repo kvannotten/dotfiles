@@ -11,15 +11,15 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'airblade/vim-gitgutter'                                     " add git info in gutter
 
 " >> Code enhancement
-  Plug 'benekastah/neomake'                    " auto complete
-  Plug 'Shougo/deoplete.nvim', { 'frozen': 1 } " auto complete
-  Plug 'tpope/vim-surround'                    " enable stuff as yss'
-  Plug 'Townk/vim-autoclose'                   " automatically complete ( { ...
-  Plug 'terryma/vim-multiple-cursors'          " multiple cursors
-  Plug 'justinmk/vim-sneak'                    " missing motion for vim (s)
-  Plug 'tpope/vim-endwise'                     " end structures like if, def, ...
-  Plug 'junegunn/vim-easy-align'               " align code on chars
-  Plug 'godlygeek/tabular'                     " tabularize stuff
+  Plug 'benekastah/neomake'           " auto complete
+  Plug 'Shougo/deoplete.nvim'         " auto complete
+  Plug 'tpope/vim-surround'           " enable stuff as yss'
+  Plug 'Townk/vim-autoclose'          " automatically complete ( { ...
+  Plug 'terryma/vim-multiple-cursors' " multiple cursors
+  Plug 'justinmk/vim-sneak'           " missing motion for vim (s)
+  Plug 'tpope/vim-endwise'            " end structures like if, def, ...
+  Plug 'junegunn/vim-easy-align'      " align code on chars
+  Plug 'godlygeek/tabular'            " tabularize stuff
 
 " >> Functionality
   Plug 'ctrlpvim/ctrlp.vim'                                             " file searcher
@@ -478,7 +478,7 @@ let g:airline_powerline_fonts = 1
 " => supertab
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:SuperTabClosePreviewOnPopupClose = 1
-let g:SuperTabDefaultCompletionType = "context"
+let g:SuperTabDefaultCompletionType = "<c-n>"
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => vim-json
