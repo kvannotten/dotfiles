@@ -4,7 +4,7 @@ name: bwh
 root: ~/krow/krow2-website
 
 # Optional tmux socket
-# socket_name: foo
+socket_name: bwh
 
 # Runs before everything. Use it to start daemons etc.
 # pre: sudo /etc/rc.d/mysqld start
