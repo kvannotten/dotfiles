@@ -20,6 +20,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'tpope/vim-endwise'            " end structures like if, def, ...
   Plug 'junegunn/vim-easy-align'      " align code on chars
   Plug 'godlygeek/tabular'            " tabularize stuff
+  Plug 'tpope/vim-unimpaired'         " handy bracket magic
 
 " >> Functionality
   Plug 'ctrlpvim/ctrlp.vim'                                             " file searcher
