@@ -78,6 +78,8 @@ workspace $tag2 output $screen1
 workspace $tag3 output $screen1
 workspace $tag4 output $screen1
 workspace $tag5 output $screen2
+workspace $tag6 output $screen2
+workspace $tag7 output $screen2
 
 
 ##########################
@@ -246,6 +248,7 @@ assign [class="Gimp"] $tag9
 assign [class="factorio"] $tag8
 assign [class="libreoffice"] $tag7
 assign [class="Thunderbird"] $tag4
+assign [class="chromium"] $tag6
 
 # windows without borders
 new_window pixel 4
