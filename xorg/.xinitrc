@@ -19,5 +19,4 @@ xset s off -dpms
 [[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
 
 # execute i3 wm
-exec i3
-
+exec i3 -V >> ~/.cache/i3log-$(date +'%F-%k-%M-%S') 2>&1
