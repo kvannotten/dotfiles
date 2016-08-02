@@ -248,6 +248,7 @@ assign [class="Gimp"] $tag9
 assign [class="factorio"] $tag8
 assign [class="libreoffice"] $tag7
 assign [class="Thunderbird"] $tag4
+assign [class="^Firefox$"] $tag2
 assign [class="chromium"] $tag6
 
 # windows without borders
@@ -330,8 +331,8 @@ exec --no-startup-id i3-msg 'exec $HOME/bin/check_mail'
 exec --no-startup-id i3-msg 'workspace $tag1; append_layout /home/kristof/.i3/workspace-1.json'
 exec --no-startup-id i3-msg 'workspace $tag1; exec $term'
 
-exec --no-startup-id i3-msg 'workspace $tag2; append_layout /home/kristof/.i3/workspace-2.json'
-exec --no-startup-id i3-msg 'workspace $tag2; exec /usr/bin/firefox'
+# exec --no-startup-id i3-msg 'workspace $tag2; append_layout /home/kristof/.i3/workspace-2.json'
+# exec --no-startup-id i3-msg 'workspace $tag2; exec /usr/bin/firefox'
 
 # start clipd
 exec --no-startup-id /home/kristof/bin/clipd -p /tmp/clipd.data
@@ -341,4 +342,3 @@ exec --no-startup-id dunst
 
 # start redshift
 exec --no-startup-id redshift
-
