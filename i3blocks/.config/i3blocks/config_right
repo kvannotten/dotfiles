@@ -1,10 +1,5 @@
 markup=pango
 
-[wallpaper]
-command=$HOME/bin/xkcd_wallpaper
-interval=once
-full_text=
-
 [networkip]
 command=$HOME/bin/i3_networkip
 interval=30
@@ -47,7 +42,6 @@ interval=1
 color=#928474
 markup=pango
 separator=true
-
 
 [battery]
 command=$HOME/bin/i3_battery

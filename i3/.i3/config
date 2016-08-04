@@ -317,7 +317,7 @@ set $browser = firefox
 #########################
 
 # do wallpaper
-exec_always feh --bg-scale '/home/kristof/.wallpaper.png'
+exec_always --no-startup-id feh --bg-scale '/home/kristof/.wallpaper.png'
 
 # compton
 exec_always --no-startup-id compton -CGf -D 2
