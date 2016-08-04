@@ -3,76 +3,137 @@ call plug#begin('~/.config/nvim/plugged')
 " {{{
 " General Plugins
 " =================
+"
 " >> Interface enhancement
-  Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }           " file side bar
-  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " fuzzy searcher
-  Plug 'vim-airline/vim-airline'                                    " status bar
-  Plug 'vim-airline/vim-airline-themes'                             " themes for airline
-  Plug 'airblade/vim-gitgutter'                                     " add git info in gutter
+    " file side bar
+    Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+
+    " fuzzy searcher
+    Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+
+    " status bar
+    Plug 'vim-airline/vim-airline'
+
+    " themes for airline
+    Plug 'vim-airline/vim-airline-themes'
+
+    " add git info in gutter
+    Plug 'airblade/vim-gitgutter'
 
 " >> Code enhancement
-  Plug 'benekastah/neomake'           " auto complete
-  Plug 'Shougo/deoplete.nvim'         " auto complete
-  Plug 'tpope/vim-surround'           " enable stuff as yss'
-  Plug 'Townk/vim-autoclose'          " automatically complete ( { ...
-  Plug 'terryma/vim-multiple-cursors' " multiple cursors
-  Plug 'justinmk/vim-sneak'           " missing motion for vim (s)
-  Plug 'tpope/vim-endwise'            " end structures like if, def, ...
-  Plug 'junegunn/vim-easy-align'      " align code on chars
-  Plug 'godlygeek/tabular'            " tabularize stuff
-  Plug 'tpope/vim-unimpaired'         " handy bracket magic
+    " auto complete
+    Plug 'benekastah/neomake'
+
+    " auto complete
+    Plug 'Shougo/deoplete.nvim'
+
+    " enable stuff as yss'
+    Plug 'tpope/vim-surround'
+
+    " automatically complete ( { ...
+    Plug 'Townk/vim-autoclose'
+
+    " multiple cursors
+    Plug 'terryma/vim-multiple-cursors'
+
+    " missing motion for vim (s)
+    Plug 'justinmk/vim-sneak'
+
+    " end structures like if, def, ...
+    Plug 'tpope/vim-endwise'
+
+    " align code on chars
+    Plug 'junegunn/vim-easy-align'
+
+    " tabularize stuff
+    Plug 'godlygeek/tabular'
+
+    " handy bracket magic
+    Plug 'tpope/vim-unimpaired'
 
 " >> Functionality
-  Plug 'ctrlpvim/ctrlp.vim'                                             " file searcher
-  Plug 'ervandew/supertab'                                              " tab completion
-  Plug 'xolox/vim-misc' | Plug 'xolox/vim-easytags'                     " ctags support
-  Plug 'majutsushi/tagbar'                                              " tagbar
-  Plug 'othree/eregex.vim'                                              " allows perl regex
-  Plug 'simnalamburt/vim-mundo'                                         " visualize undo tree
-  Plug 'chaoren/vim-wordmotion'                                         " camelcase motions
-  Plug 'SirVer/ultisnips'                                               " snippets
-  Plug 'Shougo/vimproc.vim', { 'do': 'make' } | Plug 'Shougo/unite.vim' " unite actions
+    " file searcher
+    Plug 'ctrlpvim/ctrlp.vim'
+
+    " tab completion
+    Plug 'ervandew/supertab'
+
+    " ctags support
+    Plug 'xolox/vim-misc' | Plug 'xolox/vim-easytags'
+
+    " tagbar
+    Plug 'majutsushi/tagbar'
+
+    " allows perl regex
+    Plug 'othree/eregex.vim'
+
+    " visualize undo tree
+    Plug 'simnalamburt/vim-mundo'
+
+    " camelcase motions
+    Plug 'chaoren/vim-wordmotion'
+
+    " snippets
+    Plug 'SirVer/ultisnips'
+
+    " unite actions
+    Plug 'Shougo/vimproc.vim', { 'do': 'make' } | Plug 'Shougo/unite.vim'
 
 " >> Misc
-  Plug 'Shougo/echodoc.vim'                               " show method prototype in echo window
-  Plug 'luochen1990/rainbow'                              " give each matching parens different colors
+    " show method prototype in echo window
+    Plug 'Shougo/echodoc.vim'
+
+    " give each matching parens different colors
+    Plug 'luochen1990/rainbow'
 
 " >> Colors
-  Plug 'morhetz/gruvbox'                                  " gruvbox colors
-  Plug 'tiagofumo/vim-nerdtree-syntax-highlight'          " colors for nerdtree
+    " gruvbox colors
+    Plug 'morhetz/gruvbox'
+
+    " colors for nerdtree
+    Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 " Ruby Plugins
 " ==============
-  Plug 'osyo-manga/vim-monster', { 'for': ['rb', 'erb', 'ruby'] } " ruby code completion
-  Plug 'KurtPreston/vim-autoformat-rails'                         " rails formatting
-  Plug 'tpope/vim-rails'                                          " rails plugin
+
+  " ruby code completion
+  Plug 'osyo-manga/vim-monster', { 'for': ['rb', 'erb', 'ruby'] }
+
+  " rails formatting
+  Plug 'KurtPreston/vim-autoformat-rails'
+
+  " rails plugin
+  Plug 'tpope/vim-rails'
 
 " Golang Plugins
 " ================
-  Plug 'fatih/vim-go', { 'for': ['golang', 'go'] }        " go integration
-  Plug 'zchee/deoplete-go', { 'do': 'make'}               " deoplete for go
+
+  " go integration
+  Plug 'fatih/vim-go', { 'for': ['golang', 'go'] }
+
+  " deoplete for go
+  Plug 'zchee/deoplete-go', { 'do': 'make'}
+
+  " gocode service
   Plug 'nsf/gocode', { 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
-
-" HTML plugins
-" ==============
-  Plug 'mattn/emmet-vim/'                                                  " html shortcuts
-  Plug 'jelera/vim-javascript-syntax', { 'for': ['js', 'jsx'] }            " js syntax stuff
-  Plug 'pangloss/vim-javascript', { 'for': ['js', 'jsx'] }                 " more js stuff + css
-  Plug 'ternjs/tern_for_vim', { 'do': 'npm install', 'for': ['js', 'jsx']} " javascript syntax checking
-  Plug 'mxw/vim-jsx'                                                       " jsx syntax checking
-  Plug 'carlitux/deoplete-ternjs', { 'for': ['js', 'jsx'] }                " deoplete ternjs
-
-" Elm plugins
-" ============
-  Plug 'ElmCast/elm-vim', { 'for': ['elm'] }              " elm syntax
 
 " Other plugins
 " ==============
-  Plug 'elzr/vim-json', { 'for': ['json'] }                      " json syntax
-  Plug 'suan/vim-instant-markdown'                               " markdown preview
-  Plug 'zchee/deoplete-clang', { 'for': ['c', 'h'] }             " c complete
-  Plug 'Shougo/neoinclude.vim', { 'for': ['c', 'h'] } " header completion
-  Plug 'ryanoasis/vim-devicons'                                  " add little icons in nerdtree
+
+  " json syntax
+  Plug 'elzr/vim-json', { 'for': ['json'] }
+
+  " markdown preview
+  Plug 'suan/vim-instant-markdown'
+
+  " c complete
+  Plug 'zchee/deoplete-clang', { 'for': ['c', 'h'] }
+
+  " header completion
+  Plug 'Shougo/neoinclude.vim', { 'for': ['c', 'h'] }
+
+  " add little icons in nerdtree
+  Plug 'ryanoasis/vim-devicons'
 
 "}}}
 call plug#end()
