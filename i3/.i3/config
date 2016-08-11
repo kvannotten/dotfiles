@@ -9,8 +9,9 @@ set $mod Mod1
 floating_modifier $mod
 
 # start a terminal
-set $term /usr/local/bin/st -e /home/kristof/bin/r.tmux
+set $term /usr/local/bin/st
 bindsym $mod+Return exec $term
+bindsym $mod+Ctrl+Return exec $term -e /home/kristof/bin/r.tmux
 bindsym $mod+Shift+Return exec termite --directory=`xcwd`
 
 # kill focused window
