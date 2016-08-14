@@ -1,0 +1,7 @@
+---
+i3:
+  output: /home/kristof/.i3/config
+  vars:
+    Term: /usr/local/bin/st
+    Screen1: DVI-I-3
+    Screen2: DVI-I-2
