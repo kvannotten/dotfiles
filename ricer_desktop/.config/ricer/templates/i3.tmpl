@@ -70,10 +70,8 @@ set $tag8 "8 factorio"
 set $tag9 "9 gimp"
 
 # add screens
-set $screen1 {{.Screen1}}
-set $screen2 {{.Screen2}}
-set $screen3 {{.Screen3}}
-
+{{ range $screen, $value := .Screens }}set ${{ $screen }} {{ $value }}
+{{ end }}
 # assign workspaces to monitor
 workspace $tag1 output $screen1
 workspace $tag2 output $screen1

@@ -72,7 +72,6 @@ set $tag9 "9 gimp"
 # add screens
 set $screen1 DVI-I-3
 set $screen2 DVI-I-2
-set $screen3 
 
 # assign workspaces to monitor
 workspace $tag1 output $screen1
