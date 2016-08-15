@@ -196,17 +196,16 @@ bindsym $mod+Pause mode $mode_system
 ##########################
 # BARS
 #########################
-
-# Start i3bar to display a workspace bar
+{{range .Bars}}
 bar {
-  # status_command i3status
-  output $screen1
-  status_command i3blocks -c $HOME/.config/i3blocks/config_right
+  output ${{.Output}}
+  status_command {{.StatusCommand}}
   position bottom
   workspace_buttons yes
+  tray_output {{.TrayOutput}}
 
   # Font for the bar
-  font pango:Hack, Icons 12
+  font {{.Font}}
   colors {
     separator #928374
     background #282828
@@ -217,27 +216,7 @@ bar {
     urgent_workspace #cc241d #cc241d #ebdbb2
   }
 }
-
-bar {
-  output $screen2
-  status_command i3blocks -c $HOME/.config/i3blocks/config_left
-  position bottom
-  workspace_buttons yes
-  tray_output none
-
-  # Font for the bar
-  font pango:Hack, Icons 12
-  colors {
-    separator #928374
-    background #282828
-    statusline #ebdbb2
-    focused_workspace #689d6a #689d6a #282828
-    active_workspace #1d2021 #1d2021 #928374
-    inactive_workspace #32302f #32302f #928374
-    urgent_workspace #cc241d #cc241d #ebdbb2
-  }
-}
-
+{{end}}
 
 ##########################
 # WINDOW PROPERTIES
@@ -309,36 +288,20 @@ bindsym $mod+ctrl+space exec tail -n10 -z /tmp/clipd.data | tac --separator=\0 |
 # OPTIONS
 #########################
 
-set $browser = firefox
+set $browser = {{.Browser}}
 
 
 ##########################
 # LAUNCH APPS
 #########################
 
-# do wallpaper
-exec_always --no-startup-id feh --bg-scale '/home/kristof/.wallpaper.png'
-
-# compton
-exec_always --no-startup-id compton -CGf -D 2
-
-# Start mail notification daemon
-exec --no-startup-id i3-msg 'exec $HOME/bin/i3_mail'
-
-exec --no-startup-id i3-msg 'exec $HOME/bin/check_mail'
-
+# Exec always applications
+{{range .StartAlwaysApps}}exec_always --no-startup-id {{.}}
+{{end}}
 # Restore layout
 exec --no-startup-id i3-msg 'workspace $tag1; append_layout /home/kristof/.i3/workspace-1.json'
 exec --no-startup-id i3-msg 'workspace $tag1; exec $term'
 
-# exec --no-startup-id i3-msg 'workspace $tag2; append_layout /home/kristof/.i3/workspace-2.json'
-# exec --no-startup-id i3-msg 'workspace $tag2; exec /usr/bin/firefox'
-
-# start clipd
-exec --no-startup-id /home/kristof/bin/clipd -p /tmp/clipd.data
-
-# start dunst notification server
-exec --no-startup-id dunst
-
-# start redshift
-exec --no-startup-id redshift
+# Start some applications
+{{range .StartApps}}exec --no-startup-id {{.}}
+{{end}}

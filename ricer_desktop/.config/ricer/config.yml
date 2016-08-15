@@ -6,3 +6,20 @@ i3:
     Screens:
       screen1: DVI-I-3
       screen2: DVI-I-2
+    StartApps:
+      - /home/kristof/bin/clipd -p /tmp/clipd.data
+      - dunst
+      - redshift
+    StartAlwaysApps:
+      - feh --bg-scale /home/kristof/.wallpaper.png
+      - compton -CGf -D 2
+    Browser: firefox
+    Bars: 
+      - Output: screen1
+        Font: pango:Hack, Icons 12
+        StatusCommand: i3blocks -c $HOME/.config/i3blocks/config_right
+        TrayOutput: "yes"
+      - Output: screen2
+        Font: pango:Hack, Icons 12
+        StatusCommand: i3blocks -c $HOME/.config/i3blocks/config_left
+        TrayOutput: none
