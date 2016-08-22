@@ -2,7 +2,7 @@
  * Rofi
  * ********************/
 
-rofi.lines:              4
+rofi.lines:              6
 rofi.eh:                 2
 rofi.width:              1920
 rofi.padding:            460
