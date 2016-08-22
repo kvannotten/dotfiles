@@ -1,6 +1,7 @@
 ---
 i3:
   output: /home/kristof/.i3/config
+  disabled: false
   vars:
     Term: /usr/local/bin/st
     Screens:

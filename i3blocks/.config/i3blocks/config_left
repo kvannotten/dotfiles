@@ -9,18 +9,6 @@ color=#928474
 signal=2
 urgent=true
 
-[music_label]
-command=echo 
-color=#689d6a
-interval=once
-separator=false
-
-[music]
-command=$HOME/bin/i3_music
-color=#928474
-interval=5
-separator=true
-
 [weather]
 command=$HOME/bin/i3_weather
 color=#928474
