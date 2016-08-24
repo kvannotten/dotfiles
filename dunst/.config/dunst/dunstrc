@@ -1,5 +1,5 @@
 [global]
-    font = Hack 8
+    font = Hack 12
 
     # Allow a small subset of html markup in notifications and formats:
     #   <b>bold</b>
@@ -180,17 +180,17 @@
     context = ctrl+shift+period
 
 [urgency_low]
-    background = "#323537"
+    background = "#689d6a" #323537
     foreground = "#8F9D6A"
     timeout = 15
 
 [urgency_normal]
-    background = "#323537"
-    foreground = "#AFC4DB"
+    background = "#689d6a" #323537
+    foreground = "#efefef" #AFC4DB
     timeout = 20
 
 [urgency_critical]
-    background = "#323537"
+    background = "#689d6a" #323537
     foreground = "#CF6A4C"
     timeout = 0
 
