@@ -35,3 +35,11 @@ windows:
       layout: main-vertical
       panes:
         - bundle exec rails s
+  - sidekiq:
+      layout: main-vertical
+      panes:
+        - bundle exec sidekiq
+  - logs:
+      layout: main-vertical
+      panes:
+        - tail -f log/*.log

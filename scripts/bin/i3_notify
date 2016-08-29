@@ -55,6 +55,9 @@ then # called by i3blocks
       ;;
   esac
 
+  # always clear notification
+  cp /dev/null $CACHE
+
   # Output the status block
   echo $SHORT_TEXT
   echo $SHORT_TEXT
