@@ -20,6 +20,9 @@ call plug#begin('~/.config/nvim/plugged')
     " add git info in gutter
     Plug 'airblade/vim-gitgutter'
 
+    " add some git shorthands
+    Plug 'tpope/vim-fugitive'
+
 " >> Code enhancement
     " auto complete
     Plug 'benekastah/neomake'
@@ -47,6 +50,9 @@ call plug#begin('~/.config/nvim/plugged')
 
     " tabularize stuff
     Plug 'godlygeek/tabular'
+
+    " Create tables
+    Plug 'dhruvasagar/vim-table-mode'
 
     " handy bracket magic
     Plug 'tpope/vim-unimpaired'
