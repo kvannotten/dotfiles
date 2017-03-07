@@ -20,7 +20,7 @@ call plug#begin('~/.config/nvim/plugged')
     " add git info in gutter
     Plug 'airblade/vim-gitgutter'
 
-    " add some git shorthands
+    " add some git commands
     Plug 'tpope/vim-fugitive'
 
 " >> Code enhancement
@@ -235,6 +235,12 @@ set foldcolumn=1
 " Preview window settings
 set completeopt-=preview " don't open top pane for preview
 set pumheight=10 " max height for pum
+
+set list
+set listchars=nbsp:¬,eol:¶,tab:→\ ,extends:»,precedes:«,trail:•
+set showbreak=↪\ 
+hi NonText ctermfg=16 guifg=#4a4a59
+hi SpecialKey ctermfg=16 guifg=#4a4a59
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -667,6 +673,13 @@ let g:rainbow_conf = {
 let g:deoplete#sources#clang#libclang_path = '/usr/lib/libclang.so'
 let g:deoplete#sources#clang#clang_header  = '/usr/lib/clang'
 let g:deoplete#sources#clang#sort_algo = 'priority'
+"}}}
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => deoplete-go
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"{{{
+let g:deoplete#sources#go#gocode_binary = '/home/kristof/go/bin/gocode'
 "}}}
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
