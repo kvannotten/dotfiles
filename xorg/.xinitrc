@@ -10,7 +10,8 @@ export LANG=en_US.UTF-8
 xset r rate 130 60
 
 # faster mouse movement
-xset m 3/1 4
+# xset m 3/1 4
+xinput set-prop 'Logitech USB Laser Mouse' 'libinput Accel Speed' 1.00000
 
 # disable display turning off
 xset s off -dpms
