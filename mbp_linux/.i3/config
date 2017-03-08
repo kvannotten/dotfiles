@@ -205,7 +205,7 @@ bar {
   workspace_buttons yes
 
   # Font for the bar
-  font pango:Hack, Icons 8
+  font pango:Hack, Icons 10
   colors {
     separator #928374
     background #282828
@@ -225,7 +225,7 @@ bar {
   tray_output none
 
   # Font for the bar
-  font pango:Hack, Icons 8
+  font pango:Hack, Icons 10
   colors {
     separator #928374
     background #282828
@@ -301,6 +301,16 @@ bindsym $mod+d exec rofi -modi "run" -show run
 bindsym $mod+shift+d exec --no-startup-id i3-dmenu-desktop --dmenu='rofi -dmenu'
 bindsym $mod+ctrl+space exec tac /tmp/clipd.data  | uniq -uz | rofi -dmenu -sep '\0' | xclip -selection clipboard
 
+bindsym XF86KbdBrightnessDown exec kbdlight down
+bindsym XF86KbdBrightnessUp exec kbdlight up
+
+bindsym XF86MonBrightnessUp exec /home/kristof/bin/backlight up
+bindsym XF86MonBrightnessDown exec /home/kristof/bin/backlight down
+
+bindsym XF86AudioMute exec BLOCK_BUTTON=3 /home/kristof/bin/i3_volume 
+bindsym XF86AudioRaiseVolume exec BLOCK_BUTTON=4 /home/kristof/bin/i3_volume 
+bindsym XF86AudioLowerVolume exec BLOCK_BUTTON=5 /home/kristof/bin/i3_volume
+
 
 ##########################
 # OPTIONS
@@ -323,7 +333,7 @@ exec_always "mkdir -p ~/.cache/mutt/messages/"
 
 # Restore layout
 exec --no-startup-id i3-msg 'workspace $tag1; append_layout /home/kristof/.i3/workspace-1.json'
-exec --no-startup-id i3-msg 'workspace $tag1; exec termite --name gen'
+exec --no-startup-id i3-msg 'workspace $tag1; exec st -n gen'
 
 exec --no-startup-id i3-msg 'workspace $tag2; append_layout /home/kristof/.i3/workspace-2.json'
 exec --no-startup-id i3-msg 'workspace $tag2; exec /usr/bin/chromium'

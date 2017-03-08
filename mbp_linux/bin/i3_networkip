@@ -1,5 +1,6 @@
 #!/usr/bin/env sh
 
-echo $(ifconfig wlp3s0 | grep 'inet ' | tr -s ' ' | cut -d ' ' -f 3)
+iface="${BLOCK_INSTANCE:-$(ip route | awk '/^default/ {print $5; exit}')}"
+echo $(ifconfig $iface | grep 'inet ' | tr -s ' ' | cut -d ' ' -f 3)
 
 exit 0
