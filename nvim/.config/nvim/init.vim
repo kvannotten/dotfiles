@@ -237,7 +237,7 @@ set completeopt-=preview " don't open top pane for preview
 set pumheight=10 " max height for pum
 
 set list
-set listchars=nbsp:¬,eol:¶,tab:→\ ,extends:»,precedes:«,trail:•
+set listchars=nbsp:¬,eol:¶,tab:→\ ,extends:»,precedes:«,trail:•,space:•
 set showbreak=↪\ 
 hi NonText ctermfg=16 guifg=#4a4a59
 hi SpecialKey ctermfg=16 guifg=#4a4a59
