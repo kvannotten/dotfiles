@@ -1,4 +1,4 @@
-# ~/.tmuxinator/krow.yml
+# ~/.tmuxinator/bwh.yml
 
 name: bwh
 root: ~/krow/krow2-website
@@ -39,7 +39,8 @@ windows:
       layout: main-vertical
       panes:
         - bundle exec sidekiq
-  - guard:
+  - logs:
       layout: main-vertical
       panes:
-        - bundle exec guard
+        - tail -f log/*.log
+

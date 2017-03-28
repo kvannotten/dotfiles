@@ -8,7 +8,7 @@ export LANG=en_US.UTF-8
 setxkbmap -option ctrl:nocaps
 
 # faster key repeat rate
-xset r rate 130 60
+xset r rate 125 60
 
 # faster mouse movement
 # xset m 3/1 4
