@@ -228,7 +228,8 @@ assign [class="factorio"] $tag8
 assign [class="libreoffice"] $tag7
 assign [class="Thunderbird"] $tag4
 assign [class="^Firefox$"] $tag2
-assign [class="chromium"] $tag6
+assign [class="^Chromium$"] $tag6
+assign [class="^Rambox$"] $tag3
 
 # windows without borders
 new_window pixel 4
@@ -279,7 +280,7 @@ bindsym $mod+Shift+s sticky toggle
 bindsym $mod+q exec i3-input -F 'rename workspace to "%s"' -P 'New name: '
 
 # use rofi for app launching
-bindsym $mod+d exec rofi -show run
+bindsym $mod+d exec rofi -show run -matching fuzzy
 bindsym $mod+shift+d exec --no-startup-id i3-dmenu-desktop --dmenu='rofi -dmenu'
 bindsym $mod+ctrl+space exec tail -n10 -z /tmp/clipd.data | tac --separator=\0 | rofi -dmenu -sep '\0' | xclip -selection clipboard
 

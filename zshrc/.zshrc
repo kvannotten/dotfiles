@@ -66,3 +66,7 @@ export NVIM_TUI_ENABLE_TRUE_COLOR=1
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 export TERMINAL=/home/kristof/bin/st
+
+export RUST_SRC_PATH=~/.multirust/toolchains/[your-toolchain]/lib/rustlib/src/rust/src
+
+export PATH="$HOME/.cargo/bin:$PATH"

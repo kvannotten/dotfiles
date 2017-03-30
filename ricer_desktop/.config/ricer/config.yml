@@ -5,14 +5,14 @@ i3:
   vars:
     Term: /usr/local/bin/st
     Screens:
-      screen1: DVI-I-3
-      screen2: DVI-I-2
+      screen1: HDMI2
+      screen2: HDMI1
     StartApps:
       - /home/kristof/bin/clipd -p /tmp/clipd.data
       - dunst
       - redshift
     StartAlwaysApps:
-      - feh --bg-scale /home/kristof/.wallpaper.png
+      - feh --bg-scale /home/kristof/.wallpaper_1.jpg --bg-scale /home/kristof/.wallpaper_2.png
       - compton -CGf -D 2
     Browser: firefox
     Bars: 
@@ -24,3 +24,23 @@ i3:
         Font: pango:Hack, Icons 12
         StatusCommand: i3blocks -c $HOME/.config/i3blocks/config_left
         TrayOutput: none
+xinitrc:
+  output: /home/kristof/.xinitrc
+  engine: mustache
+  vars:
+    KeyRateDelay: 125
+    KeyRateRPS: 60
+krow:
+  input: /home/kristof/.config/ricer/templates/tmuxkrow.tmpl
+  output: /home/kristof/.tmuxinator/bwh.yml
+  engine: mustache
+  vars:
+    name: bwh
+    path: ~/krow/krow2-website
+usg:
+  input: /home/kristof/.config/ricer/templates/tmuxkrow.tmpl
+  output: /home/kristof/.tmuxinator/usg.yml
+  engine: mustache
+  vars:
+    name: usg
+    path: ~/krow/bwh_usg

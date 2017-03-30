@@ -123,6 +123,11 @@ call plug#begin('~/.config/nvim/plugged')
   " gocode service
   Plug 'nsf/gocode', { 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
 
+" Rust Plugins
+" ================
+  Plug 'rust-lang/rust.vim'
+  Plug 'racer-rust/vim-racer'
+
 " Other plugins
 " ==============
 
@@ -575,6 +580,13 @@ let g:go_fmt_autosave = 1
 " }}}
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => vim-go
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set hidden
+let g:racer_cmd = "/home/kristof/.cargo/bin/racer"
+let g:racer_experimental_completer = 1
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => syntastic/neomake
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " {{{
@@ -680,6 +692,8 @@ let g:deoplete#sources#clang#sort_algo = 'priority'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "{{{
 let g:deoplete#sources#go#gocode_binary = '/home/kristof/go/bin/gocode'
+let g:deoplete#sources#go#use_cache = 1
+let g:deoplete#sources#go#json_directory = '/home/kristof/dev/cache/linux_amd64'
 "}}}
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
